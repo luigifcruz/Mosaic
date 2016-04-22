@@ -9,13 +9,14 @@
 import Foundation
 import Social
 import Accounts
+import Twitter
+
+let account = ACAccountStore()
+let accountType = account.accountTypeWithAccountTypeIdentifier(
+    ACAccountTypeIdentifierTwitter)
 
 class Twitter {
     class func getPermission(completion: (result: Bool) -> Void) {
-        let account = ACAccountStore()
-        let accountType = account.accountTypeWithAccountTypeIdentifier(
-            ACAccountTypeIdentifierTwitter)
-        
         account.requestAccessToAccountsWithType(accountType, options: nil, completion: {(success: Bool, error: NSError!) -> Void in
             completion(result: success)
         })

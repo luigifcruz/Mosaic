@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,14 +15,42 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mosiac startup.png" translatesAutoresizingMaskIntoConstraints="NO" id="hdF-9M-02N">
+                                <rect key="frame" x="87" y="223" width="240" height="174"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="174" id="yHs-rp-fjT"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Developed with ♥ from Z to A by Luigi Freitas" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0FF-LN-66s">
+                                <rect key="frame" x="114" y="689" width="187" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="6HV-yw-1nW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="11"/>
+                                <color key="textColor" red="0.6250623337765957" green="0.6250623337765957" blue="0.6250623337765957" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hdF-9M-02N" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="203" id="E0l-GK-fI1"/>
+                            <constraint firstItem="hdF-9M-02N" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="QJh-TW-lMg"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="0FF-LN-66s" secondAttribute="bottom" constant="8" symbolic="YES" id="Ri2-RH-syh"/>
+                            <constraint firstItem="hdF-9M-02N" firstAttribute="centerX" secondItem="0FF-LN-66s" secondAttribute="centerX" id="oga-A5-oPj"/>
+                            <constraint firstItem="hdF-9M-02N" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="67" id="umR-lw-DnE"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mosiac startup.png" width="633" height="864"/>
+    </resources>
 </document>

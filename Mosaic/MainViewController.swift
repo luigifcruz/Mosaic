@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Photos.getNumber(NSDate(), type: .Image) {
+        Twitter.getTweetCount(NSDate()) {
             (result) in
             print(result)
         }

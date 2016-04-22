@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F0BC0001CCA9AC4004CDBB5 /* mosiac startup.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F0BBFFF1CCA9AC4004CDBB5 /* mosiac startup.png */; };
 		1FE6C9F01CC93544009A9AAA /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FE6C9E71CC93544009A9AAA /* 1.png */; };
 		1FE6C9F11CC93544009A9AAA /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FE6C9E81CC93544009A9AAA /* 2.png */; };
 		1FE6C9F21CC93544009A9AAA /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FE6C9E91CC93544009A9AAA /* 3.png */; };
@@ -56,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F0BBFFF1CCA9AC4004CDBB5 /* mosiac startup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mosiac startup.png"; path = "../../mosiac startup.png"; sourceTree = "<group>"; };
 		1FE6C9E71CC93544009A9AAA /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1.png; path = ../../../Documents/Screenshot/1.png; sourceTree = "<group>"; };
 		1FE6C9E81CC93544009A9AAA /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2.png; path = ../../../Documents/Screenshot/2.png; sourceTree = "<group>"; };
 		1FE6C9E91CC93544009A9AAA /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 3.png; path = ../../../Documents/Screenshot/3.png; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 		1FE6C9E61CC9351B009A9AAA /* SampleArtwork */ = {
 			isa = PBXGroup;
 			children = (
+				1F0BBFFF1CCA9AC4004CDBB5 /* mosiac startup.png */,
 				1FE6C9E71CC93544009A9AAA /* 1.png */,
 				1FE6C9E81CC93544009A9AAA /* 2.png */,
 				1FE6C9E91CC93544009A9AAA /* 3.png */,
@@ -391,6 +394,7 @@
 				1FE6C9F21CC93544009A9AAA /* 3.png in Resources */,
 				1FE6C9F41CC93544009A9AAA /* 5.png in Resources */,
 				1FE6C9F61CC93544009A9AAA /* 7.png in Resources */,
+				1F0BC0001CCA9AC4004CDBB5 /* mosiac startup.png in Resources */,
 				1FE6C9F81CC93544009A9AAA /* 9.png in Resources */,
 				1FE91D6E1CC6C3B70081D650 /* Assets.xcassets in Resources */,
 				1FE91D6C1CC6C3B70081D650 /* Main.storyboard in Resources */,

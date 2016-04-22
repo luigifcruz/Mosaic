@@ -20,7 +20,7 @@ class Photos {
         })
     }
     
-    class func getNumber(day: NSDate, type: PHAssetMediaType, completion: (result: Bool) -> Void) {
+    class func getNumber(day: NSDate, type: PHAssetMediaType, livePhoto: Bool, completion: (result: Int) -> Void) {
         let requestOptions = PHImageRequestOptions()
         requestOptions.synchronous = true
         
@@ -30,13 +30,21 @@ class Photos {
         if let fetchResult: PHFetchResult = PHAsset.fetchAssetsWithMediaType(type, options: fetchOptions) {
         
             if fetchResult.count > 0 {
+                var mediaCount = 0
+                
                 for i in 0...fetchResult.count - 1 {
                     let media = fetchResult.objectAtIndex(i) as! PHAsset
                     
                     if isSameDays(media.creationDate!, day) {
-                        print(media.mediaSubtypes)
+                        if media.mediaSubtypes.rawValue == 8 && livePhoto {
+                            mediaCount += 1
+                        } else if !livePhoto {
+                            mediaCount += 1
+                        }
                     }
                 }
+                
+                completion(result: mediaCount)
             }
         }
     }
