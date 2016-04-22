@@ -115,8 +115,30 @@
                                             <outlet property="name" destination="kwk-gm-qIq" id="p0D-Tj-e5f"/>
                                         </connections>
                                     </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="allow" id="q3Q-we-6bo" customClass="AllowCollectionViewCell" customModule="Mosaic" customModuleProvider="target">
+                                        <rect key="frame" x="7" y="58" width="400" height="74"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="74"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HnB-7N-kqF" customClass="bouncyButton" customModule="Mosaic" customModuleProvider="target">
+                                                    <rect key="frame" x="111" y="17" width="179" height="40"/>
+                                                    <color key="backgroundColor" red="0.84662774268617025" green="0.84662774268617025" blue="0.84662774268617025" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="Allow Access">
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <size key="customSize" width="400" height="74"/>
+                                        <connections>
+                                            <outlet property="allow" destination="HnB-7N-kqF" id="FkT-N3-L1a"/>
+                                        </connections>
+                                    </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="chart" id="3DV-Jr-dcA" customClass="ChartCollectionViewCell" customModule="Mosaic" customModuleProvider="target">
-                                        <rect key="frame" x="7" y="58" width="400" height="171"/>
+                                        <rect key="frame" x="7" y="142" width="400" height="171"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="400" height="171"/>
@@ -135,7 +157,7 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="extension" id="HbM-AS-I7E" customClass="ExtensionCollectionViewCell" customModule="Mosaic" customModuleProvider="target">
-                                        <rect key="frame" x="160" y="239" width="95" height="95"/>
+                                        <rect key="frame" x="0.0" y="323" width="95" height="95"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="95" height="95"/>
@@ -166,6 +188,40 @@
                                         <connections>
                                             <outlet property="bubble" destination="8Sf-Gq-RHb" id="0J4-h6-oiC"/>
                                             <outlet property="name" destination="APm-zA-j0Z" id="FwE-tv-OOz"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="extensionLarge" id="1yP-mY-IfV" customClass="ExtensionCollectionViewCell" customModule="Mosaic" customModuleProvider="target">
+                                        <rect key="frame" x="105" y="323" width="200" height="95"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="95"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8nU-4T-EUz">
+                                                    <rect key="frame" x="14" y="0.0" width="172" height="75"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1,900" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Scn-1x-MMy">
+                                                            <rect key="frame" x="0.0" y="0.0" width="172" height="75"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="33"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.58328357190000002" green="0.73349049700000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SENT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITV-47-GMF">
+                                                    <rect key="frame" x="52" y="74" width="95" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                                    <color key="textColor" red="0.3921568627" green="0.50588235290000005" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <size key="customSize" width="200" height="95"/>
+                                        <connections>
+                                            <outlet property="bubble" destination="8nU-4T-EUz" id="58p-JX-0jT"/>
+                                            <outlet property="name" destination="ITV-47-GMF" id="awd-Fu-mxS"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

@@ -25,7 +25,9 @@
 		1FE6CA161CC99A4B009A9AAA /* ChartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE6CA151CC99A4B009A9AAA /* ChartCollectionViewCell.swift */; };
 		1FE6CA181CC9AA15009A9AAA /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE6CA171CC9AA15009A9AAA /* Social.framework */; };
 		1FE6CA1A1CC9AC87009A9AAA /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE6CA191CC9AC87009A9AAA /* Health.swift */; };
-		1FE6CA1C1CC9BCE2009A9AAA /* func.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE6CA1B1CC9BCE2009A9AAA /* func.swift */; };
+		1FE6CA1E1CC9C772009A9AAA /* Twitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE6CA1D1CC9C772009A9AAA /* Twitter.swift */; };
+		1FE6CA201CC9D17E009A9AAA /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE6CA1F1CC9D17E009A9AAA /* Photos.swift */; };
+		1FE6CA241CC9ECA7009A9AAA /* AllowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE6CA231CC9ECA7009A9AAA /* AllowCollectionViewCell.swift */; };
 		1FE91D671CC6C3B70081D650 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE91D661CC6C3B70081D650 /* AppDelegate.swift */; };
 		1FE91D6C1CC6C3B70081D650 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FE91D6A1CC6C3B70081D650 /* Main.storyboard */; };
 		1FE91D6E1CC6C3B70081D650 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FE91D6D1CC6C3B70081D650 /* Assets.xcassets */; };
@@ -73,7 +75,9 @@
 		1FE6CA151CC99A4B009A9AAA /* ChartCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartCollectionViewCell.swift; sourceTree = "<group>"; };
 		1FE6CA171CC9AA15009A9AAA /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		1FE6CA191CC9AC87009A9AAA /* Health.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Health.swift; sourceTree = "<group>"; };
-		1FE6CA1B1CC9BCE2009A9AAA /* func.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = func.swift; sourceTree = "<group>"; };
+		1FE6CA1D1CC9C772009A9AAA /* Twitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Twitter.swift; sourceTree = "<group>"; };
+		1FE6CA1F1CC9D17E009A9AAA /* Photos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
+		1FE6CA231CC9ECA7009A9AAA /* AllowCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllowCollectionViewCell.swift; sourceTree = "<group>"; };
 		1FE91D631CC6C3B70081D650 /* Mosaic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mosaic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE91D661CC6C3B70081D650 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FE91D6B1CC6C3B70081D650 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -142,6 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				1FE6CA191CC9AC87009A9AAA /* Health.swift */,
+				1FE6CA1D1CC9C772009A9AAA /* Twitter.swift */,
+				1FE6CA1F1CC9D17E009A9AAA /* Photos.swift */,
 			);
 			name = Trackers;
 			sourceTree = "<group>";
@@ -206,6 +212,7 @@
 			children = (
 				1FE6CA0B1CC97C68009A9AAA /* ExtensionCollectionViewCell.swift */,
 				1FE6CA0D1CC97CA0009A9AAA /* MainCollectionViewCell.swift */,
+				1FE6CA231CC9ECA7009A9AAA /* AllowCollectionViewCell.swift */,
 				1FE6CA151CC99A4B009A9AAA /* ChartCollectionViewCell.swift */,
 			);
 			name = Cells;
@@ -233,7 +240,6 @@
 			children = (
 				1FE91D661CC6C3B70081D650 /* AppDelegate.swift */,
 				1FE6C9F91CC94679009A9AAA /* MainViewController.swift */,
-				1FE6CA1B1CC9BCE2009A9AAA /* func.swift */,
 				1FE6CA001CC96ED2009A9AAA /* Trackers */,
 				1FEB48D81CC6EF7A0084DA91 /* Cells */,
 			);
@@ -332,6 +338,9 @@
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = V67PWGA5ZA;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
 							com.apple.HealthKit = {
 								enabled = 1;
 							};
@@ -457,13 +466,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FE6CA241CC9ECA7009A9AAA /* AllowCollectionViewCell.swift in Sources */,
 				1FE6CA0E1CC97CA0009A9AAA /* MainCollectionViewCell.swift in Sources */,
-				1FE6CA1C1CC9BCE2009A9AAA /* func.swift in Sources */,
 				1FE6CA161CC99A4B009A9AAA /* ChartCollectionViewCell.swift in Sources */,
 				1FE6CA0C1CC97C68009A9AAA /* ExtensionCollectionViewCell.swift in Sources */,
+				1FE6CA1E1CC9C772009A9AAA /* Twitter.swift in Sources */,
 				1FE6C9FA1CC94679009A9AAA /* MainViewController.swift in Sources */,
 				1FEB48D51CC6D8860084DA91 /* button.swift in Sources */,
 				1FE6CA1A1CC9AC87009A9AAA /* Health.swift in Sources */,
+				1FE6CA201CC9D17E009A9AAA /* Photos.swift in Sources */,
 				1FE91D671CC6C3B70081D650 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
