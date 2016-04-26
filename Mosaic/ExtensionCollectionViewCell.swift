@@ -11,6 +11,4 @@ import UIKit
 class ExtensionCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var bubble: UIView!
     @IBOutlet weak var name: UILabel!
-    
-    let cellHeight = 50
 }

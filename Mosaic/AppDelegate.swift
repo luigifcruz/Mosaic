@@ -7,15 +7,34 @@
 //
 
 import UIKit
+import RealmSwift
+
+let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    let realm = try! Realm()
     var window: UIWindow?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        let days = realm.objects(DayResume)
+        
+        if days.count > 1 {
+            if isSameDays((days.last!.date)!, NSDate()){
+                TrackerMaster.updateDay(NSDate()) {_ in }
+            } else {
+                TrackerMaster.newDay() {
+                    TrackerMaster.updateDay(NSDate()) { _ in
+                        print("Updated!")
+                    }
+                }
+            }
+        } else {
+            TrackerMaster.initiate()
+            TrackerMaster.newDay() {}
+        }
         return true
     }
 

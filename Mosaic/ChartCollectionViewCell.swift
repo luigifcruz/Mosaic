@@ -11,5 +11,4 @@ import Charts
 
 class ChartCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var chart: PieChartView!
-    
 }

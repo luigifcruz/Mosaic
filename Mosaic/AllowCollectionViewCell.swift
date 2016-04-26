@@ -9,6 +9,5 @@
 import UIKit
 
 class AllowCollectionViewCell: UICollectionViewCell {
-    
     @IBOutlet weak var allow: bouncyButton!
 }

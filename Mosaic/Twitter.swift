@@ -16,10 +16,8 @@ let accountType = account.accountTypeWithAccountTypeIdentifier(
     ACAccountTypeIdentifierTwitter)
 
 class Twitter {
-    class func getPermission(completion: (result: Bool) -> Void) {
-        account.requestAccessToAccountsWithType(accountType, options: nil, completion: {(success: Bool, error: NSError!) -> Void in
-            completion(result: success)
-        })
+    class func getPermission() {
+        account.requestAccessToAccountsWithType(accountType, options: nil, completion: {(success: Bool, error: NSError!) -> Void in })
     }
     
     class func getTweetCount(date: NSDate, completion: (result: Int) -> Void) {

@@ -10,14 +10,8 @@ import Foundation
 import Photos
 
 class Photos {
-    class func getPermission(completion: (result: Bool) -> Void) {
-        PHPhotoLibrary.requestAuthorization({ (status) -> Void in
-            if status == .Authorized {
-                completion(result: true)
-            } else {
-                completion(result: false)
-            }
-        })
+    class func getPermission() {
+        PHPhotoLibrary.requestAuthorization({ (status) -> Void in })
     }
     
     class func getNumber(day: NSDate, type: PHAssetMediaType, livePhoto: Bool, completion: (result: Int) -> Void) {

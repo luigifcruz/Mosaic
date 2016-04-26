@@ -9,9 +9,7 @@
 import UIKit
 
 class MainCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var shareBubble: UIButton!
     @IBOutlet weak var bubble: UIView!
     @IBOutlet weak var name: UILabel!
-    
-    let cellHeight = 80
-    
 }
