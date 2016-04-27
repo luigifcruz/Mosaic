@@ -17,7 +17,9 @@ let accountType = account.accountTypeWithAccountTypeIdentifier(
 
 class Twitter {
     class func getPermission() {
-        account.requestAccessToAccountsWithType(accountType, options: nil, completion: {(success: Bool, error: NSError!) -> Void in })
+        account.requestAccessToAccountsWithType(accountType, options: nil, completion: {(success: Bool, error: NSError!) -> Void in
+            TrackerMaster.updateCardStatus("Twitter", date: NSDate(), status: success)
+        })
     }
     
     class func getTweetCount(date: NSDate, completion: (result: Int) -> Void) {

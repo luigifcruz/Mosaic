@@ -23,6 +23,7 @@ class Bubble: Object {
 class Card: Object {
     dynamic var name = ""
     dynamic var enabled = false
+    dynamic var color = ""
     
     var bubbles = List<Bubble>()
 }

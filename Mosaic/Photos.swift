@@ -11,7 +11,21 @@ import Photos
 
 class Photos {
     class func getPermission() {
-        PHPhotoLibrary.requestAuthorization({ (status) -> Void in })
+        PHPhotoLibrary.requestAuthorization({
+            (status) -> Void in
+            
+            switch status {
+            case .Authorized:
+                TrackerMaster.updateCardStatus("Photos", date: NSDate(), status: true)
+                break;
+            case .Denied, .Restricted:
+                TrackerMaster.updateCardStatus("Photos", date: NSDate(), status: false)
+                break;
+            case .NotDetermined:
+                TrackerMaster.updateCardStatus("Photos", date: NSDate(), status: false)
+                break;
+            }
+        })
     }
     
     class func getNumber(day: NSDate, type: PHAssetMediaType, livePhoto: Bool, completion: (result: Int) -> Void) {

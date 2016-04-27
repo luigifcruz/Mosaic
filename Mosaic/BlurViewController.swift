@@ -9,6 +9,7 @@
 import UIKit
 
 class BlurViewController: UIViewController {
+    @IBOutlet weak var blurBackground: UIVisualEffectView!
 
     override func viewDidLoad() {
         super.viewDidLoad()

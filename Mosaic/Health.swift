@@ -22,12 +22,7 @@ class Health {
         
         let newCompletion: ((Bool, NSError?) -> Void) = {
             (success, error) -> Void in
-            
-            if !success {
-                print("You didn't allow HealthKit to access these write data types.\nThe error was:\n \(error!.description).")
-                
-                return
-            }
+            TrackerMaster.updateCardStatus("Health", date: NSDate(), status: success)
         }
         
         healthKitStore.requestAuthorizationToShareTypes(nil, readTypes: healthKitTypesToRead, completion: newCompletion)

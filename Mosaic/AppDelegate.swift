@@ -16,19 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let realm = try! Realm()
     var window: UIWindow?
-
+    var main: MainViewController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let days = realm.objects(DayResume)
         
         if days.count > 1 {
             if isSameDays((days.last!.date)!, NSDate()){
-                TrackerMaster.updateDay(NSDate()) {_ in }
+
             } else {
                 TrackerMaster.newDay() {
-                    TrackerMaster.updateDay(NSDate()) { _ in
-                        print("Updated!")
-                    }
                 }
             }
         } else {

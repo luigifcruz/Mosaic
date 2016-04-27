@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1F0BC0001CCA9AC4004CDBB5 /* mosiac startup.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F0BBFFF1CCA9AC4004CDBB5 /* mosiac startup.png */; };
+		1F3B7F591CD05BA900571B82 /* LoadingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3B7F581CD05BA900571B82 /* LoadingCollectionViewCell.swift */; };
+		1F3B7F5B1CD05BB900571B82 /* MapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3B7F5A1CD05BB900571B82 /* MapCollectionViewCell.swift */; };
+		1F3B7F5D1CD05EE000571B82 /* TweetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3B7F5C1CD05EE000571B82 /* TweetCollectionViewCell.swift */; };
+		1F3B7F5F1CD0686700571B82 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3B7F5E1CD0686700571B82 /* MainCollectionViewCell.swift */; };
 		1F6FD64D1CCEDC5600563C91 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F6FD64C1CCEDC5500563C91 /* share.png */; };
 		1F6FD6531CCEE20C00563C91 /* BlurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6FD6511CCEE20C00563C91 /* BlurViewController.swift */; };
 		1F6FD6541CCEE20C00563C91 /* BlurViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F6FD6521CCEE20C00563C91 /* BlurViewController.xib */; };
@@ -25,7 +29,7 @@
 		1FE6C9FA1CC94679009A9AAA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE6C9F91CC94679009A9AAA /* MainViewController.swift */; };
 		1FE6C9FE1CC96DA7009A9AAA /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE6C9FD1CC96DA7009A9AAA /* HealthKit.framework */; };
 		1FE6CA0C1CC97C68009A9AAA /* ExtensionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE6CA0B1CC97C68009A9AAA /* ExtensionCollectionViewCell.swift */; };
-		1FE6CA0E1CC97CA0009A9AAA /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE6CA0D1CC97CA0009A9AAA /* MainCollectionViewCell.swift */; };
+		1FE6CA0E1CC97CA0009A9AAA /* HeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE6CA0D1CC97CA0009A9AAA /* HeaderCollectionViewCell.swift */; };
 		1FE6CA101CC98EB4009A9AAA /* twitter-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FE6CA0F1CC98EB4009A9AAA /* twitter-logo.png */; };
 		1FE6CA121CC99705009A9AAA /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE6CA111CC99705009A9AAA /* Charts.framework */; };
 		1FE6CA161CC99A4B009A9AAA /* ChartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE6CA151CC99A4B009A9AAA /* ChartCollectionViewCell.swift */; };
@@ -63,6 +67,10 @@
 
 /* Begin PBXFileReference section */
 		1F0BBFFF1CCA9AC4004CDBB5 /* mosiac startup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mosiac startup.png"; path = "../../mosiac startup.png"; sourceTree = "<group>"; };
+		1F3B7F581CD05BA900571B82 /* LoadingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingCollectionViewCell.swift; sourceTree = "<group>"; };
+		1F3B7F5A1CD05BB900571B82 /* MapCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapCollectionViewCell.swift; sourceTree = "<group>"; };
+		1F3B7F5C1CD05EE000571B82 /* TweetCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCollectionViewCell.swift; sourceTree = "<group>"; };
+		1F3B7F5E1CD0686700571B82 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		1F6FD64C1CCEDC5500563C91 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = share.png; path = ../../share.png; sourceTree = "<group>"; };
 		1F6FD6511CCEE20C00563C91 /* BlurViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurViewController.swift; sourceTree = "<group>"; };
 		1F6FD6521CCEE20C00563C91 /* BlurViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlurViewController.xib; sourceTree = "<group>"; };
@@ -81,7 +89,7 @@
 		1FE6C9FD1CC96DA7009A9AAA /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		1FE6C9FF1CC96DA7009A9AAA /* Mosaic.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Mosaic.entitlements; sourceTree = "<group>"; };
 		1FE6CA0B1CC97C68009A9AAA /* ExtensionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionCollectionViewCell.swift; sourceTree = "<group>"; };
-		1FE6CA0D1CC97CA0009A9AAA /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
+		1FE6CA0D1CC97CA0009A9AAA /* HeaderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCollectionViewCell.swift; sourceTree = "<group>"; };
 		1FE6CA0F1CC98EB4009A9AAA /* twitter-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "twitter-logo.png"; path = "../../twitter-logo.png"; sourceTree = "<group>"; };
 		1FE6CA111CC99705009A9AAA /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "../../Library/Developer/Xcode/DerivedData/Mosaic-avucthnkgviolrfvidoebdwqfepc/Build/Products/Debug-iphoneos/Charts.framework"; sourceTree = "<group>"; };
 		1FE6CA151CC99A4B009A9AAA /* ChartCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -237,7 +245,11 @@
 			isa = PBXGroup;
 			children = (
 				1FE6CA0B1CC97C68009A9AAA /* ExtensionCollectionViewCell.swift */,
-				1FE6CA0D1CC97CA0009A9AAA /* MainCollectionViewCell.swift */,
+				1F3B7F5C1CD05EE000571B82 /* TweetCollectionViewCell.swift */,
+				1F3B7F581CD05BA900571B82 /* LoadingCollectionViewCell.swift */,
+				1FE6CA0D1CC97CA0009A9AAA /* HeaderCollectionViewCell.swift */,
+				1F3B7F5E1CD0686700571B82 /* MainCollectionViewCell.swift */,
+				1F3B7F5A1CD05BB900571B82 /* MapCollectionViewCell.swift */,
 				1FE6CA231CC9ECA7009A9AAA /* AllowCollectionViewCell.swift */,
 				1FE6CA151CC99A4B009A9AAA /* ChartCollectionViewCell.swift */,
 			);
@@ -495,12 +507,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F3B7F5B1CD05BB900571B82 /* MapCollectionViewCell.swift in Sources */,
 				1FE6CA241CC9ECA7009A9AAA /* AllowCollectionViewCell.swift in Sources */,
 				1F6FD6531CCEE20C00563C91 /* BlurViewController.swift in Sources */,
 				1F6FD6561CCEF5C000563C91 /* database.swift in Sources */,
-				1FE6CA0E1CC97CA0009A9AAA /* MainCollectionViewCell.swift in Sources */,
+				1F3B7F591CD05BA900571B82 /* LoadingCollectionViewCell.swift in Sources */,
+				1F3B7F5F1CD0686700571B82 /* MainCollectionViewCell.swift in Sources */,
+				1FE6CA0E1CC97CA0009A9AAA /* HeaderCollectionViewCell.swift in Sources */,
 				1FE6CA161CC99A4B009A9AAA /* ChartCollectionViewCell.swift in Sources */,
 				1FE6CA0C1CC97C68009A9AAA /* ExtensionCollectionViewCell.swift in Sources */,
+				1F3B7F5D1CD05EE000571B82 /* TweetCollectionViewCell.swift in Sources */,
 				1FE6CA1E1CC9C772009A9AAA /* Twitter.swift in Sources */,
 				1FE6C9FA1CC94679009A9AAA /* MainViewController.swift in Sources */,
 				1FEB48D51CC6D8860084DA91 /* button.swift in Sources */,
