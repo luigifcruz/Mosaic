@@ -17,6 +17,7 @@
 		1F6FD6541CCEE20C00563C91 /* BlurViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F6FD6521CCEE20C00563C91 /* BlurViewController.xib */; };
 		1F6FD6561CCEF5C000563C91 /* database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6FD6551CCEF5C000563C91 /* database.swift */; };
 		1F6FD6581CCEFC1400563C91 /* Master.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6FD6571CCEFC1400563C91 /* Master.swift */; };
+		1FD3D45F1CD17DA30081AA92 /* 23.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FD3D45E1CD17DA30081AA92 /* 23.png */; };
 		1FE6C9F01CC93544009A9AAA /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FE6C9E71CC93544009A9AAA /* 1.png */; };
 		1FE6C9F11CC93544009A9AAA /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FE6C9E81CC93544009A9AAA /* 2.png */; };
 		1FE6C9F21CC93544009A9AAA /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FE6C9E91CC93544009A9AAA /* 3.png */; };
@@ -76,6 +77,7 @@
 		1F6FD6521CCEE20C00563C91 /* BlurViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlurViewController.xib; sourceTree = "<group>"; };
 		1F6FD6551CCEF5C000563C91 /* database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = database.swift; sourceTree = "<group>"; };
 		1F6FD6571CCEFC1400563C91 /* Master.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Master.swift; sourceTree = "<group>"; };
+		1FD3D45E1CD17DA30081AA92 /* 23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 23.png; path = ../../../Documents/Screenshot/23.png; sourceTree = "<group>"; };
 		1FE6C9E71CC93544009A9AAA /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1.png; path = ../../../Documents/Screenshot/1.png; sourceTree = "<group>"; };
 		1FE6C9E81CC93544009A9AAA /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2.png; path = ../../../Documents/Screenshot/2.png; sourceTree = "<group>"; };
 		1FE6C9E91CC93544009A9AAA /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 3.png; path = ../../../Documents/Screenshot/3.png; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				1FE6C9E81CC93544009A9AAA /* 2.png */,
 				1FE6C9E91CC93544009A9AAA /* 3.png */,
 				1FE6CA0F1CC98EB4009A9AAA /* twitter-logo.png */,
+				1FD3D45E1CD17DA30081AA92 /* 23.png */,
 				1FE6C9EA1CC93544009A9AAA /* 4.png */,
 				1FE6C9EB1CC93544009A9AAA /* 5.png */,
 				1FE6C9EC1CC93544009A9AAA /* 6.png */,
@@ -430,6 +433,7 @@
 				1FE6C9F21CC93544009A9AAA /* 3.png in Resources */,
 				1FE6C9F41CC93544009A9AAA /* 5.png in Resources */,
 				1FE6C9F61CC93544009A9AAA /* 7.png in Resources */,
+				1FD3D45F1CD17DA30081AA92 /* 23.png in Resources */,
 				1F6FD6541CCEE20C00563C91 /* BlurViewController.xib in Resources */,
 				1F0BC0001CCA9AC4004CDBB5 /* mosiac startup.png in Resources */,
 				1FE6C9F81CC93544009A9AAA /* 9.png in Resources */,

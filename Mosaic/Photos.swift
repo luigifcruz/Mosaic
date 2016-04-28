@@ -9,6 +9,12 @@
 import Foundation
 import Photos
 
+struct ImageLocation {
+    var image: UIImage? = nil
+    var coordinate: CLLocationCoordinate2D? = nil
+    var identifier: String = ""
+}
+
 class Photos {
     class func getPermission() {
         PHPhotoLibrary.requestAuthorization({
@@ -28,7 +34,7 @@ class Photos {
         })
     }
     
-    class func getNumber(day: NSDate, type: PHAssetMediaType, livePhoto: Bool, completion: (result: Int) -> Void) {
+    class func get(day: NSDate, type: PHAssetMediaType, completion: (result: PHFetchResult) -> Void) {
         let requestOptions = PHImageRequestOptions()
         requestOptions.synchronous = true
         
@@ -36,24 +42,84 @@ class Photos {
         fetchOptions.sortDescriptors = [NSSortDescriptor(key:"creationDate", ascending: false)]
         
         if let fetchResult: PHFetchResult = PHAsset.fetchAssetsWithMediaType(type, options: fetchOptions) {
-        
+            
             if fetchResult.count > 0 {
-                var mediaCount = 0
-                
-                for i in 0...fetchResult.count - 1 {
-                    let media = fetchResult.objectAtIndex(i) as! PHAsset
-                    
-                    if isSameDays(media.creationDate!, day) {
-                        if media.mediaSubtypes.rawValue == 8 && livePhoto {
-                            mediaCount += 1
-                        } else if !livePhoto {
-                            mediaCount += 1
-                        }
-                    }
-                }
-                
-                completion(result: mediaCount)
+                completion(result: fetchResult)
             }
         }
     }
+    
+    class func getLivePhotosCount(day: NSDate, completion: (result: Int) -> Void) {
+        get(day, type: .Image) {
+            (result) in
+            
+            var mediaCount = 0
+            
+            for i in 0...result.count - 1 {
+                let media = result.objectAtIndex(i) as! PHAsset
+                
+                if isSameDays(media.creationDate!, day) {
+                    if media.mediaSubtypes.rawValue == 8 {
+                        mediaCount += 1
+                    }
+                }
+            }
+            
+            completion(result: mediaCount)
+        }
+    }
+    
+    class func getMediaLocation(day: NSDate, media: PHAssetMediaType, completion: (result: [ImageLocation]) -> Void) {
+        get(day, type: media) {
+            (result) in
+            
+            var mediaCount: [ImageLocation] = []
+            
+            for i in 0...result.count - 1 {
+                let media = result.objectAtIndex(i) as! PHAsset
+                
+                if isSameDays(media.creationDate!, day) {
+                    if let location = media.location?.coordinate {
+                        var payload = ImageLocation()
+                        payload.coordinate = location
+                        payload.image = getAssetThumbnail(media)
+                        
+                        mediaCount.append(payload)
+                    }
+                }
+            }
+            
+            completion(result: mediaCount)
+        }
+    }
+    
+    class func getAssetThumbnail(asset: PHAsset) -> UIImage {
+        let manager = PHImageManager.defaultManager()
+        let option = PHImageRequestOptions()
+        var thumbnail = UIImage()
+        option.synchronous = true
+        manager.requestImageForAsset(asset, targetSize: CGSize(width: 100.0, height: 100.0), contentMode: .AspectFit, options: option, resultHandler: {(result, info)->Void in
+            thumbnail = result!
+        })
+        return thumbnail
+    }
+    
+    class func getMediaCount(day: NSDate, media: PHAssetMediaType, completion: (result: Int) -> Void) {
+        get(day, type: media) {
+            (result) in
+            
+            var mediaCount = 0
+            
+            for i in 0...result.count - 1 {
+                let media = result.objectAtIndex(i) as! PHAsset
+                
+                if isSameDays(media.creationDate!, day) {
+                    mediaCount += 1
+                }
+            }
+            
+            completion(result: mediaCount)
+        }
+    }
+    
 }

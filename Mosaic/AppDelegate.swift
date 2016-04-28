@@ -18,10 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var main: MainViewController?
 
+
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let days = realm.objects(DayResume)
         
-        if days.count > 1 {
+        if days.count > 0 {
             if isSameDays((days.last!.date)!, NSDate()){
 
             } else {

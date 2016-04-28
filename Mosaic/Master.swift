@@ -192,7 +192,6 @@ class TrackerMaster {
         
         let day = realm.objects(DayResume).last!
         let card = day.cardsOfTheDay.filter("name == %@", name).first!
-        
         let masterCard = realm.objects(GeneralConfig).first!.cardStatus.filter("name == %@", name).first!
         
         do {
@@ -205,6 +204,30 @@ class TrackerMaster {
             print("Cannot save new status.")
         }
         delegate.main!.reloadCollection()
+    }
+    
+    class func getWeather() {
+        
+    }
+    
+    class func rainbows() {
+        let realm = try! Realm()
+        
+        print(realm.objects(DayResume))
+        print(realm.objects(GeneralConfig))
+    }
+}
+
+func getJSON(urlToRequest: String) -> NSData{
+    return NSData(contentsOfURL: NSURL(string: urlToRequest)!)!
+}
+
+func parseJSON(inputData: NSData, completion: (result: NSDictionary) -> Void) {
+    do {
+        let boardsDictionary = try NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary
+        completion(result: boardsDictionary!)
+    } catch {
+        print("Failed to Catch JSON.")
     }
 }
 

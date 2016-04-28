@@ -115,10 +115,7 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
                     switch cellData.type {
                     case "map":
                         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("map", forIndexPath: indexPath) as! MapCollectionViewCell
-                        
-                        cell.MapView.layer.cornerRadius = 15
-                        cell.MapView.clipsToBounds = true
-                        
+                        cell.load()
                         return cell
                     case "extension":
                         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("extension", forIndexPath: indexPath) as! ExtensionCollectionViewCell
@@ -170,7 +167,7 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
                 if let cell = superview.superview as? AllowCollectionViewCell {
                     let indexPath = collectionView.indexPathForCell(cell)
                     
-                    switch today.last!.cardsOfTheDay[(indexPath?.section)!].name {
+                    switch today.last!.cardsOfTheDay[(indexPath?.section)! - 1].name {
                     case "Twitter":
                         Twitter.getPermission()
                         break;
@@ -206,6 +203,8 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     let informationView = BlurViewController(nibName: "BlurViewController", bundle: nil)
+    var bubbleSuperview: UIView?
+    var bubblePosition: CGPoint?
     var infoIsRogue = false
     var infoIsRogueIndexPath: NSIndexPath?
     
@@ -229,6 +228,9 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
                     informationView.view.frame.size.width = view.frame.size.width
                     informationView.view.frame.size.height = view.frame.size.height
                     
+                    bubbleSuperview = cell.superview!
+                    bubblePosition = cell.frame.origin
+                    
                     window.addSubview(cell)
                     cell.frame.origin = cellPositionScreen!
                     
@@ -238,11 +240,16 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
                 }
             }
         } else {
-            /*UIView.animateWithDuration(0.7, delay: 0, usingSpringWithDamping: CGFloat(0.2), initialSpringVelocity: CGFloat(1), options: .AllowUserInteraction, animations: {
-             self.informationView.view.alpha = 0
-             }, completion: { Void in()
-             self.informationView.view.removeFromSuperview()
-             })*/
+            let cell = collectionView.cellForItemAtIndexPath(infoIsRogueIndexPath!) as! ExtensionCollectionViewCell
+            
+            UIView.animateWithDuration(0.7, delay: 0, usingSpringWithDamping: CGFloat(0.2), initialSpringVelocity: CGFloat(1), options: .AllowUserInteraction, animations: {
+                self.informationView.view.alpha = 0
+                }, completion: { Void in()
+                    self.bubbleSuperview!.addSubview(cell)
+                    cell.frame.origin = self.bubblePosition!
+                    self.informationView.view.removeFromSuperview()
+                    self.infoIsRogue = false
+            })
         }
     }
 }
