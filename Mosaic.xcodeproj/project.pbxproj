@@ -17,6 +17,8 @@
 		1F6FD6541CCEE20C00563C91 /* BlurViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F6FD6521CCEE20C00563C91 /* BlurViewController.xib */; };
 		1F6FD6561CCEF5C000563C91 /* database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6FD6551CCEF5C000563C91 /* database.swift */; };
 		1F6FD6581CCEFC1400563C91 /* Master.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6FD6571CCEFC1400563C91 /* Master.swift */; };
+		1FAA2BF51CD2C3DF004CD5D3 /* GeneralModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAA2BF31CD2C3DF004CD5D3 /* GeneralModalViewController.swift */; };
+		1FAA2BF61CD2C3DF004CD5D3 /* GeneralModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FAA2BF41CD2C3DF004CD5D3 /* GeneralModalViewController.xib */; };
 		1FD3D45F1CD17DA30081AA92 /* 23.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FD3D45E1CD17DA30081AA92 /* 23.png */; };
 		1FE6C9F01CC93544009A9AAA /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FE6C9E71CC93544009A9AAA /* 1.png */; };
 		1FE6C9F11CC93544009A9AAA /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FE6C9E81CC93544009A9AAA /* 2.png */; };
@@ -46,6 +48,7 @@
 		1FE91D7C1CC6C3B80081D650 /* MosaicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE91D7B1CC6C3B80081D650 /* MosaicTests.swift */; };
 		1FE91D871CC6C3B80081D650 /* MosaicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE91D861CC6C3B80081D650 /* MosaicUITests.swift */; };
 		1FEB48D51CC6D8860084DA91 /* button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEB48D41CC6D8860084DA91 /* button.swift */; };
+		1FEDDE171CD2E28B0068F806 /* RenderImageColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEDDE161CD2E28B0068F806 /* RenderImageColor.swift */; };
 		31449006EED01CFD97A84855 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC9A25FD871CF61358678E63 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +80,8 @@
 		1F6FD6521CCEE20C00563C91 /* BlurViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BlurViewController.xib; sourceTree = "<group>"; };
 		1F6FD6551CCEF5C000563C91 /* database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = database.swift; sourceTree = "<group>"; };
 		1F6FD6571CCEFC1400563C91 /* Master.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Master.swift; sourceTree = "<group>"; };
+		1FAA2BF31CD2C3DF004CD5D3 /* GeneralModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralModalViewController.swift; sourceTree = "<group>"; };
+		1FAA2BF41CD2C3DF004CD5D3 /* GeneralModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeneralModalViewController.xib; sourceTree = "<group>"; };
 		1FD3D45E1CD17DA30081AA92 /* 23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 23.png; path = ../../../Documents/Screenshot/23.png; sourceTree = "<group>"; };
 		1FE6C9E71CC93544009A9AAA /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1.png; path = ../../../Documents/Screenshot/1.png; sourceTree = "<group>"; };
 		1FE6C9E81CC93544009A9AAA /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2.png; path = ../../../Documents/Screenshot/2.png; sourceTree = "<group>"; };
@@ -100,7 +105,7 @@
 		1FE6CA1D1CC9C772009A9AAA /* Twitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Twitter.swift; sourceTree = "<group>"; };
 		1FE6CA1F1CC9D17E009A9AAA /* Photos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		1FE6CA231CC9ECA7009A9AAA /* AllowCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllowCollectionViewCell.swift; sourceTree = "<group>"; };
-		1FE91D631CC6C3B70081D650 /* Mosaic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mosaic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FE91D631CC6C3B70081D650 /* Luigi Freitas Cruz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Luigi Freitas Cruz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE91D661CC6C3B70081D650 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FE91D6B1CC6C3B70081D650 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1FE91D6D1CC6C3B70081D650 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,6 +118,7 @@
 		1FE91D861CC6C3B80081D650 /* MosaicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosaicUITests.swift; sourceTree = "<group>"; };
 		1FE91D881CC6C3B80081D650 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FEB48D41CC6D8860084DA91 /* button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = button.swift; sourceTree = "<group>"; };
+		1FEDDE161CD2E28B0068F806 /* RenderImageColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderImageColor.swift; sourceTree = "<group>"; };
 		29E76121FE889E7405581B11 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C8E2D2F9178DF5EC3BBAE4AD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EC9A25FD871CF61358678E63 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,13 +153,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1F6FD64E1CCEE1D500563C91 /* 3D Touch Info */ = {
+		1F6FD64E1CCEE1D500563C91 /* Blur Information */ = {
 			isa = PBXGroup;
 			children = (
+				1FAA2BF21CD2C3B7004CD5D3 /* General Info */,
 				1F6FD6511CCEE20C00563C91 /* BlurViewController.swift */,
 				1F6FD6521CCEE20C00563C91 /* BlurViewController.xib */,
 			);
-			name = "3D Touch Info";
+			name = "Blur Information";
+			sourceTree = "<group>";
+		};
+		1FAA2BF21CD2C3B7004CD5D3 /* General Info */ = {
+			isa = PBXGroup;
+			children = (
+				1FAA2BF31CD2C3DF004CD5D3 /* GeneralModalViewController.swift */,
+				1FAA2BF41CD2C3DF004CD5D3 /* GeneralModalViewController.xib */,
+			);
+			name = "General Info";
 			sourceTree = "<group>";
 		};
 		1FE6C9E61CC9351B009A9AAA /* SampleArtwork */ = {
@@ -202,7 +218,7 @@
 		1FE91D641CC6C3B70081D650 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1FE91D631CC6C3B70081D650 /* Mosaic.app */,
+				1FE91D631CC6C3B70081D650 /* Luigi Freitas Cruz.app */,
 				1FE91D771CC6C3B80081D650 /* MosaicTests.xctest */,
 				1FE91D821CC6C3B80081D650 /* MosaicUITests.xctest */,
 			);
@@ -262,8 +278,9 @@
 		1FEB48D91CC6EF970084DA91 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				1F6FD64E1CCEE1D500563C91 /* 3D Touch Info */,
+				1F6FD64E1CCEE1D500563C91 /* Blur Information */,
 				1FEB48D41CC6D8860084DA91 /* button.swift */,
+				1FEDDE161CD2E28B0068F806 /* RenderImageColor.swift */,
 			);
 			name = Custom;
 			sourceTree = "<group>";
@@ -326,7 +343,7 @@
 			);
 			name = Mosaic;
 			productName = Mosaic;
-			productReference = 1FE91D631CC6C3B70081D650 /* Mosaic.app */;
+			productReference = 1FE91D631CC6C3B70081D650 /* Luigi Freitas Cruz.app */;
 			productType = "com.apple.product-type.application";
 		};
 		1FE91D761CC6C3B80081D650 /* MosaicTests */ = {
@@ -435,6 +452,7 @@
 				1FE6C9F61CC93544009A9AAA /* 7.png in Resources */,
 				1FD3D45F1CD17DA30081AA92 /* 23.png in Resources */,
 				1F6FD6541CCEE20C00563C91 /* BlurViewController.xib in Resources */,
+				1FAA2BF61CD2C3DF004CD5D3 /* GeneralModalViewController.xib in Resources */,
 				1F0BC0001CCA9AC4004CDBB5 /* mosiac startup.png in Resources */,
 				1FE6C9F81CC93544009A9AAA /* 9.png in Resources */,
 				1FE91D6E1CC6C3B70081D650 /* Assets.xcassets in Resources */,
@@ -522,9 +540,11 @@
 				1FE6CA0C1CC97C68009A9AAA /* ExtensionCollectionViewCell.swift in Sources */,
 				1F3B7F5D1CD05EE000571B82 /* TweetCollectionViewCell.swift in Sources */,
 				1FE6CA1E1CC9C772009A9AAA /* Twitter.swift in Sources */,
+				1FEDDE171CD2E28B0068F806 /* RenderImageColor.swift in Sources */,
 				1FE6C9FA1CC94679009A9AAA /* MainViewController.swift in Sources */,
 				1FEB48D51CC6D8860084DA91 /* button.swift in Sources */,
 				1FE6CA1A1CC9AC87009A9AAA /* Health.swift in Sources */,
+				1FAA2BF51CD2C3DF004CD5D3 /* GeneralModalViewController.swift in Sources */,
 				1FE6CA201CC9D17E009A9AAA /* Photos.swift in Sources */,
 				1FE91D671CC6C3B70081D650 /* AppDelegate.swift in Sources */,
 				1F6FD6581CCEFC1400563C91 /* Master.swift in Sources */,
@@ -674,7 +694,7 @@
 				INFOPLIST_FILE = Mosaic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.luigifreitas.Mosaic;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Luigi Freitas Cruz";
 			};
 			name = Debug;
 		};
@@ -687,7 +707,7 @@
 				INFOPLIST_FILE = Mosaic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.luigifreitas.Mosaic;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Luigi Freitas Cruz";
 			};
 			name = Release;
 		};

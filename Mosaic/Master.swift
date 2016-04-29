@@ -7,6 +7,8 @@
 //
 
 import RealmSwift
+import MapKit
+import CoreLocation
 import Foundation
 
 class TrackerMaster {
@@ -23,7 +25,7 @@ class TrackerMaster {
                 
                 let PaddingMedium = Bubble()
                 
-                PaddingMedium.label = "PADDING_MEDIUM"
+                PaddingMedium.label = "PADDING"
                 PaddingMedium.number = 0
                 PaddingMedium.type = "paddingMedium"
                 PaddingMedium.height = CGFloat(40)
@@ -39,6 +41,10 @@ class TrackerMaster {
                 
                 TwitterTweetBubble.label = "TWEETS"
                 TwitterTweetBubble.number = 0
+                
+                TwitterTweetBubble.infoTitle = "Tweet Number"
+                TwitterTweetBubble.infoDescription = "Counts how many tweets you sent today."
+                
                 TwitterTweetBubble.type = "extension"
                 TwitterTweetBubble.height = CGFloat(95)
                 TwitterTweetBubble.width = CGFloat(95)
@@ -47,6 +53,10 @@ class TrackerMaster {
                 
                 TwitterRepliesBubble.label = "REPLIES"
                 TwitterRepliesBubble.number = 0
+                
+                TwitterRepliesBubble.infoTitle = "Reply Number"
+                TwitterRepliesBubble.infoDescription = "Counts how many tweets you sent today."
+                
                 TwitterRepliesBubble.type = "extension"
                 TwitterRepliesBubble.height = CGFloat(95)
                 TwitterRepliesBubble.width = CGFloat(95)
@@ -55,11 +65,23 @@ class TrackerMaster {
                 
                 TwitterFollowersBubble.label = "FOLLOWERS"
                 TwitterFollowersBubble.number = 0
+                
+                TwitterFollowersBubble.infoTitle = "New Followers Number"
+                TwitterFollowersBubble.infoDescription = "Counts how many tweets you sent today."
+                
                 TwitterFollowersBubble.type = "extensionLarge"
                 TwitterFollowersBubble.height = CGFloat(95)
                 TwitterFollowersBubble.width = CGFloat(200)
                 
-                TwitterCard.bubbles.appendContentsOf([TwitterTweetBubble, TwitterFollowersBubble, TwitterRepliesBubble, PaddingMedium])
+                let TwitterPadding1Bubble = Bubble()
+                
+                TwitterPadding1Bubble.label = "PADDING"
+                TwitterPadding1Bubble.number = 0
+                TwitterPadding1Bubble.type = "paddingMedium"
+                TwitterPadding1Bubble.height = CGFloat(20)
+                TwitterPadding1Bubble.width = CGFloat(400)
+                
+                TwitterCard.bubbles.appendContentsOf([TwitterTweetBubble, TwitterFollowersBubble, TwitterRepliesBubble, TwitterPadding1Bubble])
                 
                 // Health Card Delegate
                 let HealthCard = Card()
@@ -71,6 +93,10 @@ class TrackerMaster {
                 
                 HealthWalkingBubble.label = "DISTANCE"
                 HealthWalkingBubble.number = 0
+                
+                HealthWalkingBubble.infoTitle = "Running + Walking Distance"
+                HealthWalkingBubble.infoDescription = "Counts how many tweets you sent today."
+                
                 HealthWalkingBubble.type = "extensionMedium"
                 HealthWalkingBubble.height = CGFloat(95)
                 HealthWalkingBubble.width = CGFloat(143)
@@ -79,6 +105,10 @@ class TrackerMaster {
                 
                 HealthStepsBubble.label = "STEPS"
                 HealthStepsBubble.number = 0
+                
+                HealthStepsBubble.infoTitle = "Steps Count"
+                HealthStepsBubble.infoDescription = "Counts how many tweets you sent today."
+                
                 HealthStepsBubble.type = "extensionMedium"
                 HealthStepsBubble.height = CGFloat(95)
                 HealthStepsBubble.width = CGFloat(143)
@@ -87,11 +117,23 @@ class TrackerMaster {
                 
                 HealthFlightsBubble.label = "FLIGHTS"
                 HealthFlightsBubble.number = 0
+                
+                HealthFlightsBubble.infoTitle = "Flights Count"
+                HealthFlightsBubble.infoDescription = "Counts how many tweets you sent today."
+                
                 HealthFlightsBubble.type = "extension"
                 HealthFlightsBubble.height = CGFloat(95)
                 HealthFlightsBubble.width = CGFloat(95)
                 
-                HealthCard.bubbles.appendContentsOf([HealthWalkingBubble, HealthStepsBubble, HealthFlightsBubble])
+                let HealthPadding1Bubble = Bubble()
+                
+                HealthPadding1Bubble.label = "PADDING"
+                HealthPadding1Bubble.number = 0
+                HealthPadding1Bubble.type = "paddingMedium"
+                HealthPadding1Bubble.height = CGFloat(15)
+                HealthPadding1Bubble.width = CGFloat(400)
+                
+                HealthCard.bubbles.appendContentsOf([HealthWalkingBubble, HealthStepsBubble, HealthFlightsBubble, HealthPadding1Bubble])
                 
                 // Photos Card Delegate
                 let PhotosCard = Card()
@@ -103,6 +145,10 @@ class TrackerMaster {
                 
                 PhotosMapBubble.label = "MAP"
                 PhotosMapBubble.number = 0
+                
+                PhotosMapBubble.infoTitle = "a"
+                PhotosMapBubble.infoDescription = "a"
+                
                 PhotosMapBubble.type = "map"
                 PhotosMapBubble.height = CGFloat(171)
                 PhotosMapBubble.width = CGFloat(400)
@@ -111,6 +157,10 @@ class TrackerMaster {
                 
                 PhotosLiveBubble.label = "LIVE"
                 PhotosLiveBubble.number = 0
+                
+                PhotosLiveBubble.infoTitle = "Live Photos Count"
+                PhotosLiveBubble.infoDescription = "Counts how many tweets you sent today."
+                
                 PhotosLiveBubble.type = "extension"
                 PhotosLiveBubble.height = CGFloat(95)
                 PhotosLiveBubble.width = CGFloat(95)
@@ -119,6 +169,10 @@ class TrackerMaster {
                 
                 PhotosTotalBubble.label = "PHOTOS"
                 PhotosTotalBubble.number = 0
+                
+                PhotosTotalBubble.infoTitle = "Photos Count"
+                PhotosTotalBubble.infoDescription = "Counts how many tweets you sent today."
+                
                 PhotosTotalBubble.type = "extension"
                 PhotosTotalBubble.height = CGFloat(95)
                 PhotosTotalBubble.width = CGFloat(95)
@@ -127,6 +181,10 @@ class TrackerMaster {
                 
                 PhotosVideosBubble.label = "VIDEOS"
                 PhotosVideosBubble.number = 0
+                
+                PhotosVideosBubble.infoTitle = "Video Count"
+                PhotosVideosBubble.infoDescription = "Counts how many tweets you sent today."
+                
                 PhotosVideosBubble.type = "extension"
                 PhotosVideosBubble.height = CGFloat(95)
                 PhotosVideosBubble.width = CGFloat(95)
@@ -135,12 +193,23 @@ class TrackerMaster {
                 
                 PhotosColorBubble.label = "COLOR"
                 PhotosColorBubble.number = 0
+                
+                PhotosColorBubble.infoTitle = "Video Count"
+                PhotosColorBubble.infoDescription = "Counts how many tweets you sent today."
+                
                 PhotosColorBubble.type = "extension"
                 PhotosColorBubble.height = CGFloat(95)
                 PhotosColorBubble.width = CGFloat(95)
                 
+                let PhotosPadding1Bubble = Bubble()
                 
-                PhotosCard.bubbles.appendContentsOf([PhotosMapBubble, PhotosLiveBubble, PhotosTotalBubble, PhotosVideosBubble, PhotosColorBubble])
+                PhotosPadding1Bubble.label = "PADDING"
+                PhotosPadding1Bubble.number = 0
+                PhotosPadding1Bubble.type = "paddingMedium"
+                PhotosPadding1Bubble.height = CGFloat(15)
+                PhotosPadding1Bubble.width = CGFloat(400)
+                
+                PhotosCard.bubbles.appendContentsOf([PhotosMapBubble, PhotosTotalBubble, PhotosLiveBubble, PhotosVideosBubble, PhotosColorBubble, PhotosPadding1Bubble])
                 
                 general.cardStatus.appendContentsOf([PhotosCard, HealthCard, TwitterCard])
             })
@@ -170,21 +239,64 @@ class TrackerMaster {
         }
     }
     
-    class func updateData(day: NSDate, service: String, completion: (result: Bool) -> Void) {
-        print("Request to update \(day)")
-        
-        switch service {
-        case "TWITTER":
-            break;
-        case "HEALTH":
+    class func updateData() {
+        print("Request to update.")
+        dispatch_async(dispatch_get_main_queue()) {
+            let dayCard = delegate.realm.objects(DayResume).last!.cardsOfTheDay
             
-            break;
-        case "PHOTOS":
-            break;
-        default:
-            break;
+            for card in dayCard {
+                if card.enabled {
+                    switch card.name {
+                    case "Twitter":
+                        break;
+                    case "Health":
+                        Health.getWalkingDistance() {
+                            (result) in
+                            saveOnCard(card, result: result, term: "DISTANCE")
+                        }
+                        Health.getStepCount() {
+                            (result) in
+                            saveOnCard(card, result: result, term: "STEPS")
+                        }
+                        Health.getFlightsClimbed() {
+                            (result) in
+                            saveOnCard(card, result: result, term: "FLIGHTS")
+                        }
+                        break;
+                    case "Photos":
+                        Photos.getLivePhotosCount(NSDate()) {
+                            (result) in
+                            saveOnCard(card, result: result, term: "LIVE")
+                        }
+                        Photos.getMediaCount(NSDate(), media: .Image) {
+                            (result) in
+                            saveOnCard(card, result: result, term: "PHOTOS")
+                        }
+                        Photos.getMediaCount(NSDate(), media: .Video) {
+                            (result) in
+                            saveOnCard(card, result: result, term: "VIDEOS")
+                        }
+                        break;
+                    default:
+                        break;
+                    }
+                }
+            }
         }
-        // Health Core
+    }
+    
+    class func saveOnCard(card: Card, result: Int, term: String) {
+        dispatch_async(dispatch_get_main_queue()) {
+            do {
+                try delegate.realm.write({
+                    let bubbleNumber = card.bubbles.filter("label == %@", term).first!
+                    bubbleNumber.number = Float(result)
+                })
+                delegate.main!.reloadCollection()
+            } catch {
+                print("Can't save.")
+            }
+        }
     }
     
     class func updateCardStatus(name: String, date: NSDate, status: Bool) {
@@ -203,11 +315,8 @@ class TrackerMaster {
         } catch {
             print("Cannot save new status.")
         }
+        updateData()
         delegate.main!.reloadCollection()
-    }
-    
-    class func getWeather() {
-        
     }
     
     class func rainbows() {

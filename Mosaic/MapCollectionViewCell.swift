@@ -9,9 +9,12 @@
 import UIKit
 import MapKit
 
+class CustomPointAnnotation: MKPointAnnotation {
+    var image: UIImage!
+}
+
 class MapCollectionViewCell: UICollectionViewCell, MKMapViewDelegate {
     @IBOutlet weak var MapView: MKMapView!
-    var imageLocations: [ImageLocation]?
     
     func load() {
         MapView.layer.cornerRadius = 15
@@ -21,13 +24,13 @@ class MapCollectionViewCell: UICollectionViewCell, MKMapViewDelegate {
         
         Photos.getMediaLocation(NSDate(), media: .Image) {
             (result) in
-            self.imageLocations = result
             
-            var annotations: [MKPointAnnotation] = []
-            for location in self.imageLocations! {
-                let myAnnotation = MKPointAnnotation()
+            var annotations: [CustomPointAnnotation] = []
+            for location in result {
+                let myAnnotation = CustomPointAnnotation()
                 myAnnotation.coordinate = location.coordinate!
-    
+                myAnnotation.image = location.image
+                
                 annotations.append(myAnnotation)
             }
             self.MapView.addAnnotations(annotations)
@@ -39,15 +42,18 @@ class MapCollectionViewCell: UICollectionViewCell, MKMapViewDelegate {
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
 
         let anView = MKAnnotationView(annotation: annotation, reuseIdentifier: String(annotation.coordinate))
-
-        anView.image = imageLocations![0].image
-        anView.backgroundColor = UIColor.clearColor()
-        anView.frame.size = CGSize(width: 45, height: 45)
-        anView.canShowCallout = false
-        anView.layer.borderColor = UIColor.whiteColor().CGColor
-        anView.layer.borderWidth = 2
-        anView.layer.cornerRadius = anView.frame.height / 2
-        anView.clipsToBounds = true
+    
+        if let annotation = annotation as? CustomPointAnnotation {
+            anView.image = annotation.image
+            anView.backgroundColor = UIColor.clearColor()
+            anView.frame.size = CGSize(width: 45, height: 45)
+            anView.canShowCallout = false
+            anView.layer.borderColor = UIColor.whiteColor().CGColor
+            anView.layer.borderWidth = 2
+            anView.layer.cornerRadius = anView.frame.height / 2
+            anView.clipsToBounds = true
+        }
+        
         
         return anView
     }

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1FE91D621CC6C3B70081D650"
-               BuildableName = "Mosaic.app"
+               BuildableName = "Luigi Freitas Cruz.app"
                BlueprintName = "Mosaic"
                ReferencedContainer = "container:Mosaic.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1FE91D621CC6C3B70081D650"
-            BuildableName = "Mosaic.app"
+            BuildableName = "Luigi Freitas Cruz.app"
             BlueprintName = "Mosaic"
             ReferencedContainer = "container:Mosaic.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1FE91D621CC6C3B70081D650"
-            BuildableName = "Mosaic.app"
+            BuildableName = "Luigi Freitas Cruz.app"
             BlueprintName = "Mosaic"
             ReferencedContainer = "container:Mosaic.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1FE91D621CC6C3B70081D650"
-            BuildableName = "Mosaic.app"
+            BuildableName = "Luigi Freitas Cruz.app"
             BlueprintName = "Mosaic"
             ReferencedContainer = "container:Mosaic.xcodeproj">
          </BuildableReference>

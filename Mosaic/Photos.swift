@@ -12,7 +12,6 @@ import Photos
 struct ImageLocation {
     var image: UIImage? = nil
     var coordinate: CLLocationCoordinate2D? = nil
-    var identifier: String = ""
 }
 
 class Photos {
@@ -98,7 +97,7 @@ class Photos {
         let option = PHImageRequestOptions()
         var thumbnail = UIImage()
         option.synchronous = true
-        manager.requestImageForAsset(asset, targetSize: CGSize(width: 100.0, height: 100.0), contentMode: .AspectFit, options: option, resultHandler: {(result, info)->Void in
+        manager.requestImageForAsset(asset, targetSize: CGSize(width: 100.0, height: 100.0), contentMode: .AspectFill, options: option, resultHandler: {(result, info)->Void in
             thumbnail = result!
         })
         return thumbnail

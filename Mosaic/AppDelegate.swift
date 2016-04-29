@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 import RealmSwift
 
 let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -18,20 +19,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var main: MainViewController?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let days = realm.objects(DayResume)
-        
+
         if days.count > 0 {
             if isSameDays((days.last!.date)!, NSDate()){
-
+                TrackerMaster.updateData()
             } else {
                 TrackerMaster.newDay() {
+                    TrackerMaster.updateData()
                 }
             }
         } else {
             TrackerMaster.initiate()
-            TrackerMaster.newDay() {}
+            TrackerMaster.newDay() {
+                TrackerMaster.updateData()
+            }
         }
         return true
     }

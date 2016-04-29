@@ -27,7 +27,7 @@
         <!--Mosaic-->
         <scene sceneID="DWm-Hx-fHC">
             <objects>
-                <viewController id="Jc3-wC-ydR" customClass="MainViewController" customModule="Mosaic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Jc3-wC-ydR" customClass="MainViewController" customModule="Luigi_Freitas_Cruz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sxO-vz-YDr"/>
                         <viewControllerLayoutGuide type="bottom" id="J6a-3l-mEn"/>
@@ -46,7 +46,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="main" id="I1d-Ce-FD4" customClass="MainCollectionViewCell" customModule="Mosaic" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="main" id="I1d-Ce-FD4" customClass="MainCollectionViewCell" customModule="Luigi_Freitas_Cruz" customModuleProvider="target">
                                         <rect key="frame" x="7" y="64" width="400" height="195"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -126,7 +126,7 @@
                                             <outlet property="WeatherTemp" destination="9an-XW-LYS" id="Fxg-T2-ZSR"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="header" id="iuP-6N-rlJ" customClass="HeaderCollectionViewCell" customModule="Mosaic" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="header" id="iuP-6N-rlJ" customClass="HeaderCollectionViewCell" customModule="Luigi_Freitas_Cruz" customModuleProvider="target">
                                         <rect key="frame" x="7" y="269" width="400" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -134,35 +134,21 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Twitter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwk-gm-qIq">
-                                                    <rect key="frame" x="51" y="6" width="298" height="35"/>
-                                                    <color key="backgroundColor" red="0.95767536569148937" green="0.95767536569148937" blue="0.95767536569148937" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <rect key="frame" x="8" y="6" width="384" height="35"/>
+                                                    <color key="backgroundColor" red="0.95232472393877765" green="0.95232472393877765" blue="0.95232472393877765" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.5" green="0.47790291308792038" blue="0.49447572827198011" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GmI-VW-lsn">
-                                                    <rect key="frame" x="8" y="6" width="35" height="35"/>
-                                                    <color key="backgroundColor" red="0.58328357189014657" green="0.73349049700140956" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </view>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3TD-xU-geZ" customClass="bouncyButton" customModule="Mosaic" customModuleProvider="target">
-                                                    <rect key="frame" x="358" y="6" width="34" height="34"/>
-                                                    <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <state key="normal" backgroundImage="share.png"/>
-                                                    <connections>
-                                                        <action selector="shareSection:" destination="Jc3-wC-ydR" eventType="touchUpInside" id="leQ-vW-6Nq"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <size key="customSize" width="400" height="48"/>
                                         <connections>
-                                            <outlet property="bubble" destination="GmI-VW-lsn" id="s7U-ET-ePw"/>
                                             <outlet property="name" destination="kwk-gm-qIq" id="p0D-Tj-e5f"/>
-                                            <outlet property="shareBubble" destination="3TD-xU-geZ" id="gn4-RG-m50"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="paddingMedium" id="fAQ-FB-lbw" customClass="AllowCollectionViewCell" customModule="Mosaic" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="paddingMedium" id="fAQ-FB-lbw" customClass="AllowCollectionViewCell" customModule="Luigi_Freitas_Cruz" customModuleProvider="target">
                                         <rect key="frame" x="7" y="327" width="400" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -172,7 +158,7 @@
                                         </view>
                                         <size key="customSize" width="400" height="40"/>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="loading" id="dGe-VM-Gcl" customClass="LoadingCollectionViewCell" customModule="Mosaic" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="loading" id="dGe-VM-Gcl" customClass="LoadingCollectionViewCell" customModule="Luigi_Freitas_Cruz" customModuleProvider="target">
                                         <rect key="frame" x="7" y="377" width="400" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -193,14 +179,14 @@
                                         </view>
                                         <size key="customSize" width="400" height="75"/>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="allow" id="q3Q-we-6bo" customClass="AllowCollectionViewCell" customModule="Mosaic" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="allow" id="q3Q-we-6bo" customClass="AllowCollectionViewCell" customModule="Luigi_Freitas_Cruz" customModuleProvider="target">
                                         <rect key="frame" x="7" y="462" width="400" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="400" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4c-Rc-vuP" customClass="bouncyButton" customModule="Mosaic" customModuleProvider="target">
+                                                <button opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4c-Rc-vuP" customClass="bouncyButton" customModule="Luigi_Freitas_Cruz" customModuleProvider="target">
                                                     <rect key="frame" x="121" y="10" width="159" height="40"/>
                                                     <color key="backgroundColor" red="0.39018015151259761" green="0.89188206449468088" blue="0.44731226844366362" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" title="Activate Card">
@@ -218,7 +204,7 @@
                                             <outlet property="button" destination="X4c-Rc-vuP" id="0zI-mg-7Du"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="chart" id="3DV-Jr-dcA" customClass="ChartCollectionViewCell" customModule="Mosaic" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="chart" id="3DV-Jr-dcA" customClass="ChartCollectionViewCell" customModule="Luigi_Freitas_Cruz" customModuleProvider="target">
                                         <rect key="frame" x="7" y="547" width="400" height="171"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -237,7 +223,7 @@
                                             <outlet property="chart" destination="SUD-DI-qIP" id="xh5-mq-ZCF"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="map" id="ocH-TT-2nd" customClass="MapCollectionViewCell" customModule="Mosaic" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="map" id="ocH-TT-2nd" customClass="MapCollectionViewCell" customModule="Luigi_Freitas_Cruz" customModuleProvider="target">
                                         <rect key="frame" x="7" y="728" width="400" height="171"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -255,7 +241,7 @@
                                             <outlet property="MapView" destination="cWg-Ou-FUT" id="enD-gh-QbC"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="extension" id="HbM-AS-I7E" customClass="ExtensionCollectionViewCell" customModule="Mosaic" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="extension" id="HbM-AS-I7E" customClass="ExtensionCollectionViewCell" customModule="Luigi_Freitas_Cruz" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="909" width="95" height="95"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -288,9 +274,10 @@
                                         <connections>
                                             <outlet property="bubble" destination="8Sf-Gq-RHb" id="0J4-h6-oiC"/>
                                             <outlet property="name" destination="APm-zA-j0Z" id="FwE-tv-OOz"/>
+                                            <outlet property="number" destination="hms-2g-hHe" id="TvS-Tc-Jag"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="extensionMedium" id="1yP-mY-IfV" customClass="ExtensionCollectionViewCell" customModule="Mosaic" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="extensionMedium" id="1yP-mY-IfV" customClass="ExtensionCollectionViewCell" customModule="Luigi_Freitas_Cruz" customModuleProvider="target">
                                         <rect key="frame" x="271" y="909" width="143" height="95"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -322,9 +309,10 @@
                                         <connections>
                                             <outlet property="bubble" destination="8nU-4T-EUz" id="58p-JX-0jT"/>
                                             <outlet property="name" destination="ITV-47-GMF" id="awd-Fu-mxS"/>
+                                            <outlet property="number" destination="Scn-1x-MMy" id="lFf-er-i5L"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="extensionLarge" id="akk-6o-bc0" customClass="ExtensionCollectionViewCell" customModule="Mosaic" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="extensionLarge" id="akk-6o-bc0" customClass="ExtensionCollectionViewCell" customModule="Luigi_Freitas_Cruz" customModuleProvider="target">
                                         <rect key="frame" x="107" y="1014" width="200" height="95"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -356,9 +344,10 @@
                                         <connections>
                                             <outlet property="bubble" destination="1fb-C2-wWi" id="7zW-ha-Y54"/>
                                             <outlet property="name" destination="ptz-Kl-NZF" id="Fat-DP-hiN"/>
+                                            <outlet property="number" destination="gsg-Dc-tUB" id="DEx-u7-nGb"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tweet" id="KMf-BW-4Hx" customClass="TweetCollectionViewCell" customModule="Mosaic" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tweet" id="KMf-BW-4Hx" customClass="TweetCollectionViewCell" customModule="Luigi_Freitas_Cruz" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1119" width="400" height="107"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -423,7 +412,4 @@
             <point key="canvasLocation" x="333" y="-233"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="share.png" width="89" height="89"/>
-    </resources>
 </document>

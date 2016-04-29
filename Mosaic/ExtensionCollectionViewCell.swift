@@ -11,4 +11,5 @@ import UIKit
 class ExtensionCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var bubble: UIView!
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var number: UILabel!
 }

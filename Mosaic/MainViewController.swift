@@ -10,21 +10,45 @@ import UIKit
 import Charts
 import RealmSwift
 import MapKit
+import CoreLocation
 
-class MainViewController: UIViewController, UIGestureRecognizerDelegate {
+class MainViewController: UIViewController, UIGestureRecognizerDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
     let realm = try! Realm()
-    
+    let locManager = CLLocationManager()
     var today: Results<DayResume>!
+    
+    var weatherSummary: String! = ""
+    var weatherFahrenheit: String! = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         today = delegate.realm.objects(DayResume)
         delegate.main = self
+        
+        locManager.requestWhenInUseAuthorization()
+        locManager.delegate = self
+        locManager.location?.coordinate
     }
+
     
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if (status == .AuthorizedWhenInUse) {
+            /*let JSON = getJSON("https://api.forecast.io/forecast/a5833b25fcb056bd99c62d5dca8712fd/" + String(locManager.location!.coordinate.latitude) + "," + String(locManager.location!.coordinate.longitude))
+            
+            
+            parseJSON(JSON) {
+                (result) in
+                let fahrenheit = result["currently"]!["temperature"] as! Double
+                self.weatherFahrenheit = String(Int(fahrenheit))
+                
+                self.weatherSummary = result["currently"]!["icon"] as! String
+                self.reloadCollection()
+            }*/
+        }
+    }
     
     func reloadCollection() {
         dispatch_async(dispatch_get_main_queue()) {
@@ -89,6 +113,50 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "MMM"
             
+            cell.WeatherTemp.text = weatherFahrenheit
+            
+            switch weatherSummary as String {
+            case "clear-day":
+                cell.WeatherLabel.text = "CLEAR"
+                cell.SubLabel.text = "Nice weather for some outdoor activity."
+                break;
+            case "clear-night":
+                cell.WeatherLabel.text = "CLEAR"
+                cell.SubLabel.text = "I wanna be a human to look at those stars."
+                break;
+            case "rain":
+                cell.WeatherLabel.text = "RAINY"
+                cell.SubLabel.text = "Great day to make internet things."
+                break;
+            case "snow":
+                cell.WeatherLabel.text = "SNOWY"
+                cell.SubLabel.text = "A SloMo video of a snowball would be cool."
+                break;
+            case "wind":
+                cell.WeatherLabel.text = "WINDY"
+                cell.SubLabel.text = ""
+                break;
+            case "fog":
+                cell.WeatherLabel.text = "FOGGY"
+                cell.SubLabel.text = ""
+                break;
+            case "cloudy":
+                cell.WeatherLabel.text = "CLOUDY"
+                cell.SubLabel.text = "Great sky to take a timelapse!"
+                break;
+            case "partly-cloudy-day":
+                cell.WeatherLabel.text = "CLOUDY"
+                cell.SubLabel.text = "Great sky to take a timelapse!"
+                break;
+            case "partly-cloudy-night":
+                cell.WeatherLabel.text = "CLOUDY"
+                cell.SubLabel.text = ""
+                break;
+            default:
+                cell.WeatherLabel.text = "SUNNY"
+                break;
+            }
+            
             cell.CalendarDay.text = String(components.day)
             cell.CalendarLabel.text = String(dateFormatter.stringFromDate(NSDate())).uppercaseString
             
@@ -100,18 +168,15 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
                 let cell = collectionView.dequeueReusableCellWithReuseIdentifier("header", forIndexPath: indexPath) as! HeaderCollectionViewCell
                 
                 cell.name.text = cardData.name
-                cell.bubble.layer.backgroundColor = UIColor(hexString: cardData.color).CGColor
                 
                 cell.name.clipsToBounds = true
                 cell.name.layer.cornerRadius = 8
-                cell.bubble.layer.cornerRadius = cell.bubble.frame.height / 2
-                cell.shareBubble.layer.cornerRadius = cell.bubble.frame.height / 2
                 
                 return cell
             } else {
                 if today.last!.cardsOfTheDay[indexPath.section - 1].enabled {
                     let cellData = cardData.bubbles[indexPath.row - 1]
-                    
+
                     switch cellData.type {
                     case "map":
                         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("map", forIndexPath: indexPath) as! MapCollectionViewCell
@@ -119,6 +184,8 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
                         return cell
                     case "extension":
                         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("extension", forIndexPath: indexPath) as! ExtensionCollectionViewCell
+                        
+                        cell.number.text = String(Int(cellData.number))
                         
                         let swipeGesture = UILongPressGestureRecognizer(target: self, action: #selector(MainViewController.didPress(_:)))
                         swipeGesture.delegate = self
@@ -133,6 +200,12 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
                     case "extensionMedium":
                         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("extensionMedium", forIndexPath: indexPath) as! ExtensionCollectionViewCell
                         
+                        cell.number.text = String(Int(cellData.number))
+                        
+                        let swipeGesture = UILongPressGestureRecognizer(target: self, action: #selector(MainViewController.didPress(_:)))
+                        swipeGesture.delegate = self
+                        cell.bubble.addGestureRecognizer(swipeGesture)
+                        
                         cell.name.text = cellData.label
                         cell.name.textColor = UIColor(hexString: cardData.color)
                         cell.bubble.layer.backgroundColor = UIColor(hexString: cardData.color).CGColor
@@ -141,6 +214,12 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
                         return cell
                     case "extensionLarge":
                         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("extensionLarge", forIndexPath: indexPath) as! ExtensionCollectionViewCell
+                        
+                        cell.number.text = String(Int(cellData.number))
+                        
+                        let swipeGesture = UILongPressGestureRecognizer(target: self, action: #selector(MainViewController.didPress(_:)))
+                        swipeGesture.delegate = self
+                        cell.bubble.addGestureRecognizer(swipeGesture)
                         
                         cell.name.text = cellData.label
                         cell.name.textColor = UIColor(hexString: cardData.color)
@@ -202,6 +281,7 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
+    let informationModal = GeneralModalViewController(nibName: "GeneralModalViewController", bundle: nil)
     let informationView = BlurViewController(nibName: "BlurViewController", bundle: nil)
     var bubbleSuperview: UIView?
     var bubblePosition: CGPoint?
@@ -218,6 +298,7 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
                 
                 let cell = collectionView.cellForItemAtIndexPath(infoIsRogueIndexPath!) as! ExtensionCollectionViewCell
                 let cellPositionScreen = cell.superview?.convertPoint(cell.frame.origin, toView: nil)
+                let cellData = today.last!.cardsOfTheDay[(infoIsRogueIndexPath?.section)! - 1].bubbles[infoIsRogueIndexPath!.row - 1]
                 
                 informationView.view.alpha = 0
                 if let window: UIWindow = UIApplication.sharedApplication().keyWindow {
@@ -231,10 +312,25 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
                     bubbleSuperview = cell.superview!
                     bubblePosition = cell.frame.origin
                     
+                    informationModal.bubble = cellData
+                    
                     window.addSubview(cell)
                     cell.frame.origin = cellPositionScreen!
                     
+                    let primitivePosition = cellPositionScreen!.y - 10 - informationModal.view.frame.height
+                    
+                    window.addSubview(informationModal.view)
+                    
+                    let ratio = (cell.bubble.frame.width - 5) / informationModal.view.frame.width
+                    informationModal.view.transform = CGAffineTransformMakeScale(ratio, ratio)
+                    informationModal.view.frame.origin = cellPositionScreen!
+                
+                    
                     UIView.animateWithDuration(0.2, animations: {
+                        self.informationModal.view.transform = CGAffineTransformIdentity
+                        self.informationModal.view.frame.origin.y = primitivePosition
+                        self.informationModal.view.frame.origin.x = 0
+                        
                         self.informationView.view.alpha = 1
                     })
                 }
@@ -244,7 +340,12 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
             
             UIView.animateWithDuration(0.7, delay: 0, usingSpringWithDamping: CGFloat(0.2), initialSpringVelocity: CGFloat(1), options: .AllowUserInteraction, animations: {
                 self.informationView.view.alpha = 0
+                self.informationModal.view.alpha = 0
                 }, completion: { Void in()
+                    self.informationModal.view.transform = CGAffineTransformIdentity
+                    self.informationModal.view.removeFromSuperview()
+                    self.informationModal.view.alpha = 1
+                    
                     self.bubbleSuperview!.addSubview(cell)
                     cell.frame.origin = self.bubblePosition!
                     self.informationView.view.removeFromSuperview()
