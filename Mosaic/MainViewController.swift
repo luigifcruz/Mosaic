@@ -70,6 +70,7 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate, CLLocat
     
     func reloadCollection(notification: NSNotification) {
         dispatch_async(dispatch_get_main_queue()) {
+            self.realm.refresh()
             self.today = self.realm.objects(DayResume)
             self.collectionView.reloadData()
         }
@@ -302,6 +303,7 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate, CLLocat
         data.points = String(Int(today.last!.points))
         data.weatherNumber = weatherFahrenheit
         data.weatherCondition = weatherCondition
+        data.location = locationString
         data.tPoints = cardPoint(today.last!.cardsOfTheDay, name: "Twitter")
         data.hPoints = cardPoint(today.last!.cardsOfTheDay, name: "Health")
         data.pPoints = cardPoint(today.last!.cardsOfTheDay, name: "Photos")

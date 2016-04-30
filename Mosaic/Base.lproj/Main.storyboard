@@ -427,7 +427,6 @@
         <!--Settings-->
         <scene sceneID="wQ6-Fu-Gzc">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="a4y-4O-fKi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Settings" id="qT5-Ao-P6S" customClass="SettingsViewController" customModule="Luigi_Freitas_Cruz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mrn-BL-zrD"/>
@@ -541,6 +540,7 @@
                         <outlet property="tableView" destination="WAc-6n-i4f" id="cAl-1K-TfO"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a4y-4O-fKi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="857" y="-233"/>
         </scene>

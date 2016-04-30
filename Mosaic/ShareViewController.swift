@@ -12,6 +12,7 @@ import MapKit
 struct shareData {
     var weatherNumber = ""
     var weatherCondition = ""
+    var location = ""
     var points = ""
     var tPoints = ""
     var hPoints = ""
@@ -19,7 +20,7 @@ struct shareData {
 }
 
 class ShareViewController: UIViewController, CLLocationManagerDelegate {
-
+    @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var header: UIView!
     @IBOutlet weak var calendarLabel: UILabel!
     @IBOutlet weak var weatherLabel: UILabel!
@@ -71,6 +72,7 @@ class ShareViewController: UIViewController, CLLocationManagerDelegate {
         twitterNumber.text = data.tPoints
         healthNumber.text = data.hPoints
         photosNumber.text = data.pPoints
+        locationLabel.text = data.location
     }
     
     override func viewDidLayoutSubviews() {
