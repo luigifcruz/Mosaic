@@ -15,9 +15,11 @@ class GeneralConfig: Object {
 class Bubble: Object {
     dynamic var label = ""
     dynamic var number: Float = 0.0
-    
+
     dynamic var infoTitle: String?
     dynamic var infoDescription: String?
+    
+    dynamic var pointWeight = 0.0
     
     dynamic var height = CGFloat()
     dynamic var width = CGFloat()
@@ -28,6 +30,7 @@ class Card: Object {
     dynamic var name = ""
     dynamic var enabled = false
     dynamic var color = ""
+    dynamic var points = 0.0
     
     var bubbles = List<Bubble>()
 }

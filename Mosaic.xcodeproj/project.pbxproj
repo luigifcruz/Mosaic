@@ -19,16 +19,13 @@
 		1F6FD6581CCEFC1400563C91 /* Master.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6FD6571CCEFC1400563C91 /* Master.swift */; };
 		1FAA2BF51CD2C3DF004CD5D3 /* GeneralModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAA2BF31CD2C3DF004CD5D3 /* GeneralModalViewController.swift */; };
 		1FAA2BF61CD2C3DF004CD5D3 /* GeneralModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FAA2BF41CD2C3DF004CD5D3 /* GeneralModalViewController.xib */; };
+		1FB2C7731CD42376002BC1F9 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB2C7711CD42376002BC1F9 /* ShareViewController.swift */; };
+		1FB2C7741CD42376002BC1F9 /* ShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FB2C7721CD42376002BC1F9 /* ShareViewController.xib */; };
+		1FB2C7B31CD45FD7002BC1F9 /* mosaic_new.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FB2C7B21CD45FD7002BC1F9 /* mosaic_new.png */; };
+		1FB2C7B51CD46853002BC1F9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB2C7B41CD46853002BC1F9 /* SettingsViewController.swift */; };
+		1FB2C7BA1CD46E2C002BC1F9 /* DidYouKnowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB2C7B91CD46E2C002BC1F9 /* DidYouKnowTableViewCell.swift */; };
+		1FB2C7BC1CD470E4002BC1F9 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB2C7BB1CD470E4002BC1F9 /* HeaderTableViewCell.swift */; };
 		1FD3D45F1CD17DA30081AA92 /* 23.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FD3D45E1CD17DA30081AA92 /* 23.png */; };
-		1FE6C9F01CC93544009A9AAA /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FE6C9E71CC93544009A9AAA /* 1.png */; };
-		1FE6C9F11CC93544009A9AAA /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FE6C9E81CC93544009A9AAA /* 2.png */; };
-		1FE6C9F21CC93544009A9AAA /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FE6C9E91CC93544009A9AAA /* 3.png */; };
-		1FE6C9F31CC93544009A9AAA /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FE6C9EA1CC93544009A9AAA /* 4.png */; };
-		1FE6C9F41CC93544009A9AAA /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FE6C9EB1CC93544009A9AAA /* 5.png */; };
-		1FE6C9F51CC93544009A9AAA /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FE6C9EC1CC93544009A9AAA /* 6.png */; };
-		1FE6C9F61CC93544009A9AAA /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FE6C9ED1CC93544009A9AAA /* 7.png */; };
-		1FE6C9F71CC93544009A9AAA /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FE6C9EE1CC93544009A9AAA /* 8.png */; };
-		1FE6C9F81CC93544009A9AAA /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FE6C9EF1CC93544009A9AAA /* 9.png */; };
 		1FE6C9FA1CC94679009A9AAA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE6C9F91CC94679009A9AAA /* MainViewController.swift */; };
 		1FE6C9FE1CC96DA7009A9AAA /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE6C9FD1CC96DA7009A9AAA /* HealthKit.framework */; };
 		1FE6CA0C1CC97C68009A9AAA /* ExtensionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE6CA0B1CC97C68009A9AAA /* ExtensionCollectionViewCell.swift */; };
@@ -82,16 +79,13 @@
 		1F6FD6571CCEFC1400563C91 /* Master.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Master.swift; sourceTree = "<group>"; };
 		1FAA2BF31CD2C3DF004CD5D3 /* GeneralModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralModalViewController.swift; sourceTree = "<group>"; };
 		1FAA2BF41CD2C3DF004CD5D3 /* GeneralModalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeneralModalViewController.xib; sourceTree = "<group>"; };
+		1FB2C7711CD42376002BC1F9 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		1FB2C7721CD42376002BC1F9 /* ShareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareViewController.xib; sourceTree = "<group>"; };
+		1FB2C7B21CD45FD7002BC1F9 /* mosaic_new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mosaic_new.png; path = ../../mosaic_new.png; sourceTree = "<group>"; };
+		1FB2C7B41CD46853002BC1F9 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		1FB2C7B91CD46E2C002BC1F9 /* DidYouKnowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DidYouKnowTableViewCell.swift; sourceTree = "<group>"; };
+		1FB2C7BB1CD470E4002BC1F9 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		1FD3D45E1CD17DA30081AA92 /* 23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 23.png; path = ../../../Documents/Screenshot/23.png; sourceTree = "<group>"; };
-		1FE6C9E71CC93544009A9AAA /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1.png; path = ../../../Documents/Screenshot/1.png; sourceTree = "<group>"; };
-		1FE6C9E81CC93544009A9AAA /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2.png; path = ../../../Documents/Screenshot/2.png; sourceTree = "<group>"; };
-		1FE6C9E91CC93544009A9AAA /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 3.png; path = ../../../Documents/Screenshot/3.png; sourceTree = "<group>"; };
-		1FE6C9EA1CC93544009A9AAA /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 4.png; path = ../../../Documents/Screenshot/4.png; sourceTree = "<group>"; };
-		1FE6C9EB1CC93544009A9AAA /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 5.png; path = ../../../Documents/Screenshot/5.png; sourceTree = "<group>"; };
-		1FE6C9EC1CC93544009A9AAA /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 6.png; path = ../../../Documents/Screenshot/6.png; sourceTree = "<group>"; };
-		1FE6C9ED1CC93544009A9AAA /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 7.png; path = ../../../Documents/Screenshot/7.png; sourceTree = "<group>"; };
-		1FE6C9EE1CC93544009A9AAA /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 8.png; path = ../../../Documents/Screenshot/8.png; sourceTree = "<group>"; };
-		1FE6C9EF1CC93544009A9AAA /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 9.png; path = ../../../Documents/Screenshot/9.png; sourceTree = "<group>"; };
 		1FE6C9F91CC94679009A9AAA /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1FE6C9FD1CC96DA7009A9AAA /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		1FE6C9FF1CC96DA7009A9AAA /* Mosaic.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Mosaic.entitlements; sourceTree = "<group>"; };
@@ -172,24 +166,54 @@
 			name = "General Info";
 			sourceTree = "<group>";
 		};
-		1FE6C9E61CC9351B009A9AAA /* SampleArtwork */ = {
+		1FB2C7751CD4237A002BC1F9 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				1FB2C7711CD42376002BC1F9 /* ShareViewController.swift */,
+				1FB2C7721CD42376002BC1F9 /* ShareViewController.xib */,
+			);
+			name = Share;
+			sourceTree = "<group>";
+		};
+		1FB2C7B61CD46DA7002BC1F9 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				1FB2C7B41CD46853002BC1F9 /* SettingsViewController.swift */,
+				1FB2C7B71CD46DBC002BC1F9 /* Cells */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		1FB2C7B71CD46DBC002BC1F9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1FB2C7B91CD46E2C002BC1F9 /* DidYouKnowTableViewCell.swift */,
+				1FB2C7BB1CD470E4002BC1F9 /* HeaderTableViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		1FB2C7B81CD46DC4002BC1F9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1FE6C9F91CC94679009A9AAA /* MainViewController.swift */,
+				1FEB48D81CC6EF7A0084DA91 /* Cells */,
+				1FB2C7751CD4237A002BC1F9 /* Share */,
+				1F6FD64E1CCEE1D500563C91 /* Blur Information */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		1FE6C9E61CC9351B009A9AAA /* Artwork */ = {
 			isa = PBXGroup;
 			children = (
 				1F0BBFFF1CCA9AC4004CDBB5 /* mosiac startup.png */,
-				1FE6C9E71CC93544009A9AAA /* 1.png */,
 				1F6FD64C1CCEDC5500563C91 /* share.png */,
-				1FE6C9E81CC93544009A9AAA /* 2.png */,
-				1FE6C9E91CC93544009A9AAA /* 3.png */,
+				1FB2C7B21CD45FD7002BC1F9 /* mosaic_new.png */,
 				1FE6CA0F1CC98EB4009A9AAA /* twitter-logo.png */,
 				1FD3D45E1CD17DA30081AA92 /* 23.png */,
-				1FE6C9EA1CC93544009A9AAA /* 4.png */,
-				1FE6C9EB1CC93544009A9AAA /* 5.png */,
-				1FE6C9EC1CC93544009A9AAA /* 6.png */,
-				1FE6C9ED1CC93544009A9AAA /* 7.png */,
-				1FE6C9EE1CC93544009A9AAA /* 8.png */,
-				1FE6C9EF1CC93544009A9AAA /* 9.png */,
 			);
-			name = SampleArtwork;
+			name = Artwork;
 			sourceTree = "<group>";
 		};
 		1FE6CA001CC96ED2009A9AAA /* Trackers */ = {
@@ -228,11 +252,12 @@
 		1FE91D651CC6C3B70081D650 /* Mosaic */ = {
 			isa = PBXGroup;
 			children = (
-				1FE6C9E61CC9351B009A9AAA /* SampleArtwork */,
 				1FEB48DB1CC6EFEE0084DA91 /* General */,
-				1FEB48D81CC6EF7A0084DA91 /* Cells */,
-				1FE6CA001CC96ED2009A9AAA /* Trackers */,
 				1FEB48DA1CC6EFDD0084DA91 /* Storyboards */,
+				1FB2C7B81CD46DC4002BC1F9 /* Main */,
+				1FB2C7B61CD46DA7002BC1F9 /* Settings */,
+				1FE6C9E61CC9351B009A9AAA /* Artwork */,
+				1FE6CA001CC96ED2009A9AAA /* Trackers */,
 				1FEB48D91CC6EF970084DA91 /* Custom */,
 				1FE91D6D1CC6C3B70081D650 /* Assets.xcassets */,
 				1FE6C9FD1CC96DA7009A9AAA /* HealthKit.framework */,
@@ -278,7 +303,6 @@
 		1FEB48D91CC6EF970084DA91 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				1F6FD64E1CCEE1D500563C91 /* Blur Information */,
 				1FEB48D41CC6D8860084DA91 /* button.swift */,
 				1FEDDE161CD2E28B0068F806 /* RenderImageColor.swift */,
 			);
@@ -299,7 +323,6 @@
 			children = (
 				1FE91D661CC6C3B70081D650 /* AppDelegate.swift */,
 				1F6FD6551CCEF5C000563C91 /* database.swift */,
-				1FE6C9F91CC94679009A9AAA /* MainViewController.swift */,
 			);
 			name = General;
 			sourceTree = "<group>";
@@ -439,22 +462,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FE6C9F71CC93544009A9AAA /* 8.png in Resources */,
 				1FE91D711CC6C3B70081D650 /* LaunchScreen.storyboard in Resources */,
-				1FE6C9F31CC93544009A9AAA /* 4.png in Resources */,
-				1FE6C9F01CC93544009A9AAA /* 1.png in Resources */,
 				1FE6CA101CC98EB4009A9AAA /* twitter-logo.png in Resources */,
-				1FE6C9F51CC93544009A9AAA /* 6.png in Resources */,
-				1FE6C9F11CC93544009A9AAA /* 2.png in Resources */,
 				1F6FD64D1CCEDC5600563C91 /* share.png in Resources */,
-				1FE6C9F21CC93544009A9AAA /* 3.png in Resources */,
-				1FE6C9F41CC93544009A9AAA /* 5.png in Resources */,
-				1FE6C9F61CC93544009A9AAA /* 7.png in Resources */,
 				1FD3D45F1CD17DA30081AA92 /* 23.png in Resources */,
 				1F6FD6541CCEE20C00563C91 /* BlurViewController.xib in Resources */,
+				1FB2C7B31CD45FD7002BC1F9 /* mosaic_new.png in Resources */,
 				1FAA2BF61CD2C3DF004CD5D3 /* GeneralModalViewController.xib in Resources */,
 				1F0BC0001CCA9AC4004CDBB5 /* mosiac startup.png in Resources */,
-				1FE6C9F81CC93544009A9AAA /* 9.png in Resources */,
+				1FB2C7741CD42376002BC1F9 /* ShareViewController.xib in Resources */,
 				1FE91D6E1CC6C3B70081D650 /* Assets.xcassets in Resources */,
 				1FE91D6C1CC6C3B70081D650 /* Main.storyboard in Resources */,
 			);
@@ -531,10 +547,13 @@
 			files = (
 				1F3B7F5B1CD05BB900571B82 /* MapCollectionViewCell.swift in Sources */,
 				1FE6CA241CC9ECA7009A9AAA /* AllowCollectionViewCell.swift in Sources */,
+				1FB2C7B51CD46853002BC1F9 /* SettingsViewController.swift in Sources */,
+				1FB2C7731CD42376002BC1F9 /* ShareViewController.swift in Sources */,
 				1F6FD6531CCEE20C00563C91 /* BlurViewController.swift in Sources */,
 				1F6FD6561CCEF5C000563C91 /* database.swift in Sources */,
 				1F3B7F591CD05BA900571B82 /* LoadingCollectionViewCell.swift in Sources */,
 				1F3B7F5F1CD0686700571B82 /* MainCollectionViewCell.swift in Sources */,
+				1FB2C7BA1CD46E2C002BC1F9 /* DidYouKnowTableViewCell.swift in Sources */,
 				1FE6CA0E1CC97CA0009A9AAA /* HeaderCollectionViewCell.swift in Sources */,
 				1FE6CA161CC99A4B009A9AAA /* ChartCollectionViewCell.swift in Sources */,
 				1FE6CA0C1CC97C68009A9AAA /* ExtensionCollectionViewCell.swift in Sources */,
@@ -547,6 +566,7 @@
 				1FAA2BF51CD2C3DF004CD5D3 /* GeneralModalViewController.swift in Sources */,
 				1FE6CA201CC9D17E009A9AAA /* Photos.swift in Sources */,
 				1FE91D671CC6C3B70081D650 /* AppDelegate.swift in Sources */,
+				1FB2C7BC1CD470E4002BC1F9 /* HeaderTableViewCell.swift in Sources */,
 				1F6FD6581CCEFC1400563C91 /* Master.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

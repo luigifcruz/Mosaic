@@ -97,7 +97,7 @@ class Photos {
         let option = PHImageRequestOptions()
         var thumbnail = UIImage()
         option.synchronous = true
-        manager.requestImageForAsset(asset, targetSize: CGSize(width: 100.0, height: 100.0), contentMode: .AspectFill, options: option, resultHandler: {(result, info)->Void in
+        manager.requestImageForAsset(asset, targetSize: CGSize(width: 45.0, height: 45.0), contentMode: .AspectFill, options: option, resultHandler: {(result, info)->Void in
             thumbnail = result!
         })
         return thumbnail

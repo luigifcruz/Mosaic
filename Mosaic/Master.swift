@@ -13,23 +13,13 @@ import Foundation
 
 class TrackerMaster {
     
-    class func initiate() {
+    class func initiate(completion: () -> Void) {
         print("Initialization required.")
     
         do {
             try delegate.realm.write({
                 let general = GeneralConfig()
                 delegate.realm.add(general)
-                
-                // Padding Cards
-                
-                let PaddingMedium = Bubble()
-                
-                PaddingMedium.label = "PADDING"
-                PaddingMedium.number = 0
-                PaddingMedium.type = "paddingMedium"
-                PaddingMedium.height = CGFloat(40)
-                PaddingMedium.width = CGFloat(400)
                 
                 // Twitter Card Delegate
                 let TwitterCard = Card()
@@ -41,6 +31,8 @@ class TrackerMaster {
                 
                 TwitterTweetBubble.label = "TWEETS"
                 TwitterTweetBubble.number = 0
+                
+                TwitterTweetBubble.pointWeight = 0.1
                 
                 TwitterTweetBubble.infoTitle = "Tweet Number"
                 TwitterTweetBubble.infoDescription = "Counts how many tweets you sent today."
@@ -54,8 +46,10 @@ class TrackerMaster {
                 TwitterRepliesBubble.label = "REPLIES"
                 TwitterRepliesBubble.number = 0
                 
+                TwitterRepliesBubble.pointWeight = 0.2
+                
                 TwitterRepliesBubble.infoTitle = "Reply Number"
-                TwitterRepliesBubble.infoDescription = "Counts how many tweets you sent today."
+                TwitterRepliesBubble.infoDescription = "Counts how many replies you received today."
                 
                 TwitterRepliesBubble.type = "extension"
                 TwitterRepliesBubble.height = CGFloat(95)
@@ -66,8 +60,10 @@ class TrackerMaster {
                 TwitterFollowersBubble.label = "FOLLOWERS"
                 TwitterFollowersBubble.number = 0
                 
+                TwitterFollowersBubble.pointWeight = 1
+                
                 TwitterFollowersBubble.infoTitle = "New Followers Number"
-                TwitterFollowersBubble.infoDescription = "Counts how many tweets you sent today."
+                TwitterFollowersBubble.infoDescription = "Counts how many new followers you have today."
                 
                 TwitterFollowersBubble.type = "extensionLarge"
                 TwitterFollowersBubble.height = CGFloat(95)
@@ -94,8 +90,10 @@ class TrackerMaster {
                 HealthWalkingBubble.label = "DISTANCE"
                 HealthWalkingBubble.number = 0
                 
+                HealthWalkingBubble.pointWeight = 0.01
+                
                 HealthWalkingBubble.infoTitle = "Running + Walking Distance"
-                HealthWalkingBubble.infoDescription = "Counts how many tweets you sent today."
+                HealthWalkingBubble.infoDescription = "Your Walking + Running distance today. Data from Health app."
                 
                 HealthWalkingBubble.type = "extensionMedium"
                 HealthWalkingBubble.height = CGFloat(95)
@@ -106,8 +104,10 @@ class TrackerMaster {
                 HealthStepsBubble.label = "STEPS"
                 HealthStepsBubble.number = 0
                 
-                HealthStepsBubble.infoTitle = "Steps Count"
-                HealthStepsBubble.infoDescription = "Counts how many tweets you sent today."
+                HealthStepsBubble.pointWeight = 0.002
+                
+                HealthStepsBubble.infoTitle = "Steps Number"
+                HealthStepsBubble.infoDescription = "Counts how many steps you gave today. Data from Health app."
                 
                 HealthStepsBubble.type = "extensionMedium"
                 HealthStepsBubble.height = CGFloat(95)
@@ -115,11 +115,13 @@ class TrackerMaster {
                 
                 let HealthFlightsBubble = Bubble()
                 
-                HealthFlightsBubble.label = "FLIGHTS"
+                HealthFlightsBubble.label = "FLOORS"
                 HealthFlightsBubble.number = 0
                 
-                HealthFlightsBubble.infoTitle = "Flights Count"
-                HealthFlightsBubble.infoDescription = "Counts how many tweets you sent today."
+                HealthFlightsBubble.pointWeight = 0.5
+                
+                HealthFlightsBubble.infoTitle = "Floors Climbed"
+                HealthFlightsBubble.infoDescription = "Counts how many floors you climbed today. Data from Health app."
                 
                 HealthFlightsBubble.type = "extension"
                 HealthFlightsBubble.height = CGFloat(95)
@@ -158,8 +160,10 @@ class TrackerMaster {
                 PhotosLiveBubble.label = "LIVE"
                 PhotosLiveBubble.number = 0
                 
+                PhotosLiveBubble.pointWeight = 3
+                
                 PhotosLiveBubble.infoTitle = "Live Photos Count"
-                PhotosLiveBubble.infoDescription = "Counts how many tweets you sent today."
+                PhotosLiveBubble.infoDescription = "Counts how many awesome Live Photos you took today."
                 
                 PhotosLiveBubble.type = "extension"
                 PhotosLiveBubble.height = CGFloat(95)
@@ -170,8 +174,10 @@ class TrackerMaster {
                 PhotosTotalBubble.label = "PHOTOS"
                 PhotosTotalBubble.number = 0
                 
+                PhotosTotalBubble.pointWeight = 1
+                
                 PhotosTotalBubble.infoTitle = "Photos Count"
-                PhotosTotalBubble.infoDescription = "Counts how many tweets you sent today."
+                PhotosTotalBubble.infoDescription = "Counts how many photos you took today. This includes screenshots."
                 
                 PhotosTotalBubble.type = "extension"
                 PhotosTotalBubble.height = CGFloat(95)
@@ -182,8 +188,10 @@ class TrackerMaster {
                 PhotosVideosBubble.label = "VIDEOS"
                 PhotosVideosBubble.number = 0
                 
+                PhotosVideosBubble.pointWeight = 5
+                
                 PhotosVideosBubble.infoTitle = "Video Count"
-                PhotosVideosBubble.infoDescription = "Counts how many tweets you sent today."
+                PhotosVideosBubble.infoDescription = "Counts how many videos you took today."
                 
                 PhotosVideosBubble.type = "extension"
                 PhotosVideosBubble.height = CGFloat(95)
@@ -213,6 +221,7 @@ class TrackerMaster {
                 
                 general.cardStatus.appendContentsOf([PhotosCard, HealthCard, TwitterCard])
             })
+            completion()
         } catch {
             print("Failed to creat general obeject.")
         }
@@ -242,6 +251,7 @@ class TrackerMaster {
     class func updateData() {
         print("Request to update.")
         dispatch_async(dispatch_get_main_queue()) {
+            delegate.realm.refresh()
             let dayCard = delegate.realm.objects(DayResume).last!.cardsOfTheDay
             
             for card in dayCard {
@@ -260,7 +270,7 @@ class TrackerMaster {
                         }
                         Health.getFlightsClimbed() {
                             (result) in
-                            saveOnCard(card, result: result, term: "FLIGHTS")
+                            saveOnCard(card, result: result, term: "FLOORS")
                         }
                         break;
                     case "Photos":
@@ -282,6 +292,34 @@ class TrackerMaster {
                     }
                 }
             }
+            let day = delegate.realm.objects(DayResume).last!
+            
+            var points: Double = 0.0
+            for card in day.cardsOfTheDay {
+                var cardPoint: Double = 0.0
+                
+                for bubble in card.bubbles {
+                    cardPoint += Double(bubble.number) * Double(bubble.pointWeight)
+                    points += Double(bubble.number) * Double(bubble.pointWeight)
+                }
+                
+                do {
+                    try delegate.realm.write({
+                        card.points = cardPoint
+                    })
+                } catch {
+                    print("Failed to save.")
+                }
+            }
+            
+            do {
+                try delegate.realm.write({
+                    day.points = points
+                })
+            } catch {
+                print("Failed to save.")
+            }
+            NSNotificationCenter.defaultCenter().postNotificationName("ReloadBubbles", object: false)
         }
     }
     
@@ -292,10 +330,10 @@ class TrackerMaster {
                     let bubbleNumber = card.bubbles.filter("label == %@", term).first!
                     bubbleNumber.number = Float(result)
                 })
-                delegate.main!.reloadCollection()
             } catch {
                 print("Can't save.")
             }
+            NSNotificationCenter.defaultCenter().postNotificationName("ReloadBubbles", object: false)
         }
     }
     
@@ -316,15 +354,18 @@ class TrackerMaster {
             print("Cannot save new status.")
         }
         updateData()
-        delegate.main!.reloadCollection()
+        NSNotificationCenter.defaultCenter().postNotificationName("ReloadBubbles", object: false)
     }
     
     class func rainbows() {
         let realm = try! Realm()
-        
         print(realm.objects(DayResume))
         print(realm.objects(GeneralConfig))
     }
+}
+
+func cardPoint(cards: List<Card>, name: String) -> String {
+    return String(Int(cards.filter("name == %@", name).first!.points))
 }
 
 func getJSON(urlToRequest: String) -> NSData{

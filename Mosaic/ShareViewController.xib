@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShareViewController" customModule="Luigi_Freitas_Cruz" customModuleProvider="target">
+            <connections>
+                <outlet property="calendarLabel" destination="ial-5K-F57" id="SSk-n9-43e"/>
+                <outlet property="calendarNumber" destination="auY-4u-ymv" id="j2W-p3-8ZC"/>
+                <outlet property="header" destination="1bu-mg-ySs" id="lVJ-JH-kyl"/>
+                <outlet property="healthLabel" destination="1Sb-dB-qUA" id="EwQ-eA-jeK"/>
+                <outlet property="healthNumber" destination="15c-cb-2lq" id="pJB-Ww-YX2"/>
+                <outlet property="healthView" destination="fIS-r7-ZrG" id="3yc-r1-TN1"/>
+                <outlet property="photosLabel" destination="Xtm-fd-0zR" id="hlJ-Jg-SAR"/>
+                <outlet property="photosNumber" destination="lJK-JS-68E" id="73A-Cu-O3Y"/>
+                <outlet property="photosView" destination="jBh-5o-kdf" id="u45-Yk-P9k"/>
+                <outlet property="pointsLabel" destination="6rQ-O9-dAd" id="Cvo-ae-o8Q"/>
+                <outlet property="pointsNumber" destination="PqL-xA-jSJ" id="AfN-71-9Gk"/>
+                <outlet property="twitterLabel" destination="fk9-zC-p2N" id="ujb-zn-yVn"/>
+                <outlet property="twitterNumber" destination="QZN-IB-V3y" id="3MO-RQ-uo7"/>
+                <outlet property="twitterView" destination="KYg-Li-SIE" id="6L5-pm-Jfy"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="weatherLabel" destination="SPd-l5-3pm" id="7Np-BY-jvG"/>
+                <outlet property="weatherNumber" destination="8Y8-gV-GPU" id="ENR-X8-wxR"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="415" height="314"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1bu-mg-ySs">
+                    <rect key="frame" x="14" y="52" width="387" height="117"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="23º" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Y8-gV-GPU">
+                            <rect key="frame" x="289" y="19" width="71" height="51"/>
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="36"/>
+                            <color key="textColor" red="0.55780418880000004" green="0.55780418880000004" blue="0.55780418880000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="POINTS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rQ-O9-dAd">
+                            <rect key="frame" x="160" y="79" width="64" height="18"/>
+                            <color key="backgroundColor" red="1" green="0.63734864790000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="APRIL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ial-5K-F57">
+                            <rect key="frame" x="36" y="66" width="50" height="16"/>
+                            <color key="backgroundColor" red="1" green="0.0" blue="0.139720808" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SUNNY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SPd-l5-3pm">
+                            <rect key="frame" x="299" y="66" width="50" height="16"/>
+                            <color key="backgroundColor" red="0.0" green="0.31684141119999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1,000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PqL-xA-jSJ">
+                            <rect key="frame" x="115" y="16" width="156" height="60"/>
+                            <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="57"/>
+                            <color key="textColor" red="0.5037504156" green="0.5037504156" blue="0.5037504156" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auY-4u-ymv">
+                            <rect key="frame" x="26" y="19" width="71" height="51"/>
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="36"/>
+                            <color key="textColor" red="0.55780418880000004" green="0.55780418880000004" blue="0.55780418880000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.96526301589999997" green="0.96526301589999997" blue="0.96526301589999997" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="generated by " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0r-s2-xpB">
+                    <rect key="frame" x="135" y="295" width="216" height="14"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                    <color key="textColor" red="0.70671958111702127" green="0.70671958111702127" blue="0.70671958111702127" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mosaic" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZv-ML-XGt">
+                    <rect key="frame" x="350" y="291" width="51" height="21"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                    <color key="textColor" red="0.01551789554420413" green="0.41220115765788967" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KYg-Li-SIE">
+                    <rect key="frame" x="43" y="188" width="75" height="75"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="23" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZN-IB-V3y">
+                            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                            <gestureRecognizers/>
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="33"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.58328357190000002" green="0.73349049700000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Twitter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fk9-zC-p2N">
+                    <rect key="frame" x="43" y="264" width="75" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.3921568627" green="0.50588235290000005" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fIS-r7-ZrG">
+                    <rect key="frame" x="170" y="188" width="75" height="75"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="23" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15c-cb-2lq">
+                            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                            <gestureRecognizers/>
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="33"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.58328357190000002" green="0.73349049700000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Health" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Sb-dB-qUA">
+                    <rect key="frame" x="170" y="264" width="75" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.3921568627" green="0.50588235290000005" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jBh-5o-kdf">
+                    <rect key="frame" x="297" y="188" width="75" height="75"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="23" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJK-JS-68E">
+                            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                            <gestureRecognizers/>
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="33"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.58328357190000002" green="0.73349049700000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Photos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xtm-fd-0zR">
+                    <rect key="frame" x="297" y="264" width="75" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.3921568627" green="0.50588235290000005" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MY DAILY ACTIVITIES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sd8-dO-sib">
+                    <rect key="frame" x="14" y="8" width="387" height="38"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" red="0.19924289344247284" green="0.49389891772839856" blue="0.91181848404255317" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="253.5" y="173"/>
+        </view>
+    </objects>
+</document>

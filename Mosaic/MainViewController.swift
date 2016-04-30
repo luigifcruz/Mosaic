@@ -23,10 +23,15 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate, CLLocat
     var weatherSummary: String! = ""
     var weatherFahrenheit: String! = ""
     
+    var quote = ""
+    var weatherCondition = ""
+    var locationString = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         today = delegate.realm.objects(DayResume)
-        delegate.main = self
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.reloadCollection(_:)), name:"ReloadBubbles", object: nil)
         
         locManager.requestWhenInUseAuthorization()
         locManager.delegate = self
@@ -36,21 +41,34 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate, CLLocat
     
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if (status == .AuthorizedWhenInUse) {
-            /*let JSON = getJSON("https://api.forecast.io/forecast/a5833b25fcb056bd99c62d5dca8712fd/" + String(locManager.location!.coordinate.latitude) + "," + String(locManager.location!.coordinate.longitude))
             
+            let geoCoder = CLGeocoder()
+            geoCoder.reverseGeocodeLocation(locManager.location!, completionHandler: { (placemarks, error) -> Void in
+                
+                var placeMark: CLPlacemark!
+                placeMark = placemarks?[0]
+                
+                if let city = placeMark.addressDictionary!["City"] as? NSString {
+                    if let country = placeMark.addressDictionary!["Country"] as? NSString {
+                        self.locationString = "\(city), \(country)"
+                    }
+                }
+            })
             
-            parseJSON(JSON) {
+            let URL = "https://api.forecast.io/forecast/a5833b25fcb056bd99c62d5dca8712fd/\(String(locManager.location!.coordinate.latitude)),\(String(locManager.location!.coordinate.longitude))"
+
+            parseJSON(getJSON(URL)) {
                 (result) in
                 let fahrenheit = result["currently"]!["temperature"] as! Double
                 self.weatherFahrenheit = String(Int(fahrenheit))
                 
                 self.weatherSummary = result["currently"]!["icon"] as! String
-                self.reloadCollection()
-            }*/
+                NSNotificationCenter.defaultCenter().postNotificationName("ReloadBubbles", object: false)
+            }
         }
     }
     
-    func reloadCollection() {
+    func reloadCollection(notification: NSNotification) {
         dispatch_async(dispatch_get_main_queue()) {
             self.today = self.realm.objects(DayResume)
             self.collectionView.reloadData()
@@ -113,50 +131,63 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate, CLLocat
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "MMM"
             
+            cell.PointsNumber.text = String(Int(today.last!.points))
+            
             cell.WeatherTemp.text = weatherFahrenheit
             
             switch weatherSummary as String {
             case "clear-day":
                 cell.WeatherLabel.text = "CLEAR"
+                cell.MainLabel.text = "Keep Productive!"
                 cell.SubLabel.text = "Nice weather for some outdoor activity."
                 break;
             case "clear-night":
                 cell.WeatherLabel.text = "CLEAR"
+                cell.MainLabel.text = "Keep It Creative!"
                 cell.SubLabel.text = "I wanna be a human to look at those stars."
                 break;
             case "rain":
                 cell.WeatherLabel.text = "RAINY"
+                cell.MainLabel.text = "Cut the crap!"
                 cell.SubLabel.text = "Great day to make internet things."
                 break;
             case "snow":
                 cell.WeatherLabel.text = "SNOWY"
+                cell.MainLabel.text = "Moar Media!"
                 cell.SubLabel.text = "A SloMo video of a snowball would be cool."
                 break;
             case "wind":
                 cell.WeatherLabel.text = "WINDY"
-                cell.SubLabel.text = ""
+                cell.MainLabel.text = ""
+                cell.SubLabel.text = "Go fly a kite! It's awesome. I think. #NotHuman"
                 break;
             case "fog":
                 cell.WeatherLabel.text = "FOGGY"
-                cell.SubLabel.text = ""
+                cell.MainLabel.text = ""
+                cell.SubLabel.text = "It's not a great ideia to drive today."
                 break;
             case "cloudy":
                 cell.WeatherLabel.text = "CLOUDY"
+                cell.MainLabel.text = "Moar Media!"
                 cell.SubLabel.text = "Great sky to take a timelapse!"
                 break;
             case "partly-cloudy-day":
                 cell.WeatherLabel.text = "CLOUDY"
+                cell.MainLabel.text = "Moar Media!"
                 cell.SubLabel.text = "Great sky to take a timelapse!"
                 break;
             case "partly-cloudy-night":
                 cell.WeatherLabel.text = "CLOUDY"
-                cell.SubLabel.text = ""
+                cell.MainLabel.text = "Stay Focused!"
+                cell.SubLabel.text = "Time for some commits?"
                 break;
             default:
                 cell.WeatherLabel.text = "SUNNY"
                 break;
             }
             
+            weatherCondition = cell.WeatherLabel.text!
+            quote = cell.MainLabel.text!
             cell.CalendarDay.text = String(components.day)
             cell.CalendarLabel.text = String(dateFormatter.stringFromDate(NSDate())).uppercaseString
             
@@ -264,21 +295,28 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate, CLLocat
     }
     
     @IBAction func shareSection(sender: AnyObject) {
-        if let button = sender as? UIButton {
-            if let superview = button.superview {
-                if let cell = superview.superview as? HeaderCollectionViewCell {
-                    let indexPath = collectionView.indexPathForCell(cell)
-                    let cell = collectionView.cellForItemAtIndexPath(indexPath!)!
-                    
-                    UIGraphicsBeginImageContextWithOptions(cell.frame.size, false, 0);
-                    cell.drawViewHierarchyInRect(cell.bounds, afterScreenUpdates: true)
-                    let image = UIGraphicsGetImageFromCurrentImageContext();
-                    UIGraphicsEndImageContext();
-                    
-                    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-                }
-            }
-        }
+        let informationModal = ShareViewController(nibName: "ShareViewController", bundle: nil)
+        
+        var data = shareData()
+        
+        data.points = String(Int(today.last!.points))
+        data.weatherNumber = weatherFahrenheit
+        data.weatherCondition = weatherCondition
+        data.tPoints = cardPoint(today.last!.cardsOfTheDay, name: "Twitter")
+        data.hPoints = cardPoint(today.last!.cardsOfTheDay, name: "Health")
+        data.pPoints = cardPoint(today.last!.cardsOfTheDay, name: "Photos")
+        
+        informationModal.data = data
+        
+        UIGraphicsBeginImageContextWithOptions(informationModal.view.frame.size, false, 0);
+        informationModal.view.drawViewHierarchyInRect(informationModal.view.bounds, afterScreenUpdates: true)
+        let image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        let shareText = "\(quote) #MosaicApp"
+        
+        let vc = UIActivityViewController(activityItems: [shareText, image], applicationActivities: [])
+        presentViewController(vc, animated: true, completion: nil)
     }
     
     let informationModal = GeneralModalViewController(nibName: "GeneralModalViewController", bundle: nil)
@@ -298,7 +336,6 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate, CLLocat
                 
                 let cell = collectionView.cellForItemAtIndexPath(infoIsRogueIndexPath!) as! ExtensionCollectionViewCell
                 let cellPositionScreen = cell.superview?.convertPoint(cell.frame.origin, toView: nil)
-                let cellData = today.last!.cardsOfTheDay[(infoIsRogueIndexPath?.section)! - 1].bubbles[infoIsRogueIndexPath!.row - 1]
                 
                 informationView.view.alpha = 0
                 if let window: UIWindow = UIApplication.sharedApplication().keyWindow {
@@ -312,7 +349,8 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate, CLLocat
                     bubbleSuperview = cell.superview!
                     bubblePosition = cell.frame.origin
                     
-                    informationModal.bubble = cellData
+
+                    informationModal.bubble = today.last!.cardsOfTheDay[(infoIsRogueIndexPath?.section)! - 1].bubbles[infoIsRogueIndexPath!.row - 1]
                     
                     window.addSubview(cell)
                     cell.frame.origin = cellPositionScreen!

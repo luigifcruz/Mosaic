@@ -18,15 +18,16 @@ class GeneralModalViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
         descriptionText!.text = bubble.infoDescription
         titleText!.text = bubble.infoTitle
     }
     
     override func viewDidLayoutSubviews() {
-        blurView.layer.cornerRadius = 18
+        blurView.layer.cornerRadius = 16
         blurView.clipsToBounds = true
-        blurView.layer.borderColor = UIColor(red:0.90, green:0.90, blue:0.90, alpha:1.0).CGColor
-        blurView.layer.borderWidth = 1
     }
 
     override func didReceiveMemoryWarning() {

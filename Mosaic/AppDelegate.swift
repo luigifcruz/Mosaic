@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let realm = try! Realm()
     var window: UIWindow?
-    var main: MainViewController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let days = realm.objects(DayResume)
@@ -31,9 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
         } else {
-            TrackerMaster.initiate()
-            TrackerMaster.newDay() {
-                TrackerMaster.updateData()
+            TrackerMaster.initiate() {
+                TrackerMaster.newDay() {
+                    TrackerMaster.updateData()
+                }
             }
         }
         return true
