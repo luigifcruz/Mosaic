@@ -41,33 +41,47 @@ class TrackerMaster {
                 TwitterTweetBubble.height = CGFloat(95)
                 TwitterTweetBubble.width = CGFloat(95)
                 
-                let TwitterRepliesBubble = Bubble()
+                let TwitterMentionsBubble = Bubble()
                 
-                TwitterRepliesBubble.label = "REPLIES"
-                TwitterRepliesBubble.number = 0
+                TwitterMentionsBubble.label = "MENTIONS"
+                TwitterMentionsBubble.number = 0
                 
-                TwitterRepliesBubble.pointWeight = 0.2
+                TwitterMentionsBubble.pointWeight = 0.2
                 
-                TwitterRepliesBubble.infoTitle = "Reply Number"
-                TwitterRepliesBubble.infoDescription = "Counts how many replies you received today."
+                TwitterMentionsBubble.infoTitle = "Mentions Number"
+                TwitterMentionsBubble.infoDescription = "Counts how many mentions you received today."
                 
-                TwitterRepliesBubble.type = "extension"
-                TwitterRepliesBubble.height = CGFloat(95)
-                TwitterRepliesBubble.width = CGFloat(95)
+                TwitterMentionsBubble.type = "extension"
+                TwitterMentionsBubble.height = CGFloat(95)
+                TwitterMentionsBubble.width = CGFloat(95)
                 
-                let TwitterFollowersBubble = Bubble()
+                let TwitterLikesBubble = Bubble()
                 
-                TwitterFollowersBubble.label = "FOLLOWERS"
-                TwitterFollowersBubble.number = 0
+                TwitterLikesBubble.label = "LIKES"
+                TwitterLikesBubble.number = 0
                 
-                TwitterFollowersBubble.pointWeight = 1
+                TwitterLikesBubble.pointWeight = 0.5
                 
-                TwitterFollowersBubble.infoTitle = "New Followers Number"
-                TwitterFollowersBubble.infoDescription = "Counts how many new followers you have today."
+                TwitterLikesBubble.infoTitle = "Likes Number"
+                TwitterLikesBubble.infoDescription = "Counts how many likes you received today."
                 
-                TwitterFollowersBubble.type = "extensionLarge"
-                TwitterFollowersBubble.height = CGFloat(95)
-                TwitterFollowersBubble.width = CGFloat(200)
+                TwitterLikesBubble.type = "extension"
+                TwitterLikesBubble.height = CGFloat(95)
+                TwitterLikesBubble.width = CGFloat(95)
+                
+                let TwitterRetweetsBubble = Bubble()
+                
+                TwitterRetweetsBubble.label = "RETWEETS"
+                TwitterRetweetsBubble.number = 0
+                
+                TwitterRetweetsBubble.pointWeight = 1
+                
+                TwitterRetweetsBubble.infoTitle = "Retweets Number"
+                TwitterRetweetsBubble.infoDescription = "Counts how many retweets you received today."
+                
+                TwitterRetweetsBubble.type = "extension"
+                TwitterRetweetsBubble.height = CGFloat(95)
+                TwitterRetweetsBubble.width = CGFloat(95)
                 
                 let TwitterPadding1Bubble = Bubble()
                 
@@ -77,7 +91,7 @@ class TrackerMaster {
                 TwitterPadding1Bubble.height = CGFloat(20)
                 TwitterPadding1Bubble.width = CGFloat(400)
                 
-                TwitterCard.bubbles.appendContentsOf([TwitterTweetBubble, TwitterFollowersBubble, TwitterRepliesBubble, TwitterPadding1Bubble])
+                TwitterCard.bubbles.appendContentsOf([TwitterTweetBubble, TwitterMentionsBubble, TwitterLikesBubble, TwitterRetweetsBubble, TwitterPadding1Bubble])
                 
                 // Health Card Delegate
                 let HealthCard = Card()
@@ -258,40 +272,66 @@ class TrackerMaster {
                 if card.enabled {
                     switch card.name {
                     case "Twitter":
+                        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), {
+                            Twitter.getUserID() {
+                                (result) in
+                                Twitter.getTweets(result, completion: { (result) in
+                                    saveOnCard(card, result: result, term: "TWEETS")
+                                })
+                                Twitter.getMentions(result, completion: { (result) in
+                                    saveOnCard(card, result: result, term: "MENTIONS")
+                                })
+                                Twitter.getRetweets(result, completion: { (result) in
+                                    saveOnCard(card, result: result, term: "RETWEETS")
+                                })
+                            }
+                            
+                        })
                         break;
                     case "Health":
-                        Health.getWalkingDistance() {
-                            (result) in
-                            saveOnCard(card, result: result, term: "DISTANCE")
-                        }
-                        Health.getStepCount() {
-                            (result) in
-                            saveOnCard(card, result: result, term: "STEPS")
-                        }
-                        Health.getFlightsClimbed() {
-                            (result) in
-                            saveOnCard(card, result: result, term: "FLOORS")
-                        }
+                        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+                            Health.getWalkingDistance() {
+                                (result) in
+                                saveOnCard(card, result: result, term: "DISTANCE")
+                            }
+                            Health.getStepCount() {
+                                (result) in
+                                saveOnCard(card, result: result, term: "STEPS")
+                            }
+                            Health.getFlightsClimbed() {
+                                (result) in
+                                saveOnCard(card, result: result, term: "FLOORS")
+                            }
+                        })
                         break;
                     case "Photos":
-                        Photos.getLivePhotosCount(NSDate()) {
-                            (result) in
-                            saveOnCard(card, result: result, term: "LIVE")
-                        }
-                        Photos.getMediaCount(NSDate(), media: .Image) {
-                            (result) in
-                            saveOnCard(card, result: result, term: "PHOTOS")
-                        }
-                        Photos.getMediaCount(NSDate(), media: .Video) {
-                            (result) in
-                            saveOnCard(card, result: result, term: "VIDEOS")
-                        }
+                        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+                            Photos.getLivePhotosCount(NSDate()) {
+                                (result) in
+                                saveOnCard(card, result: result, term: "LIVE")
+                            }
+                            Photos.getMediaCount(NSDate(), media: .Image) {
+                                (result) in
+                                saveOnCard(card, result: result, term: "PHOTOS")
+                            }
+                            Photos.getMediaCount(NSDate(), media: .Video) {
+                                (result) in
+                                saveOnCard(card, result: result, term: "VIDEOS")
+                            }
+                        })
                         break;
                     default:
                         break;
                     }
                 }
             }
+            pontuation()
+        }
+    }
+    
+    class func pontuation() {
+        dispatch_async(dispatch_get_main_queue()) {
+            delegate.realm.refresh()
             let day = delegate.realm.objects(DayResume).last!
             
             var points: Double = 0.0
@@ -333,7 +373,7 @@ class TrackerMaster {
             } catch {
                 print("Can't save.")
             }
-            NSNotificationCenter.defaultCenter().postNotificationName("ReloadBubbles", object: false)
+            pontuation()
         }
     }
     
@@ -368,8 +408,12 @@ func cardPoint(cards: List<Card>, name: String) -> String {
     return String(Int(cards.filter("name == %@", name).first!.points))
 }
 
-func getJSON(urlToRequest: String) -> NSData{
-    return NSData(contentsOfURL: NSURL(string: urlToRequest)!)!
+func getJSON(urlToRequest: String) -> NSData {
+    let data = NSURL(string: urlToRequest)
+    if data != nil {
+       return NSData(contentsOfURL: data!)!
+    }
+    return NSData(contentsOfURL: data!)!
 }
 
 func parseJSON(inputData: NSData, completion: (result: NSDictionary) -> Void) {
@@ -404,4 +448,13 @@ extension UIColor {
             self.init(red: CGFloat(r) / CGFloat(255.0), green: CGFloat(g) / CGFloat(255.0), blue: CGFloat(b) / CGFloat(255.0), alpha: CGFloat(1))
         }
     }
+}
+
+public func delay(delay:Double, closure:()->()) {
+    dispatch_after(
+        dispatch_time(
+            DISPATCH_TIME_NOW,
+            Int64(delay * Double(NSEC_PER_SEC))
+        ),
+        dispatch_get_main_queue(), closure)
 }

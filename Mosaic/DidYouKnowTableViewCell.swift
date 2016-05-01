@@ -14,5 +14,6 @@ class DidYouKnowTableViewCell: UITableViewCell {
     @IBOutlet weak var knowImage: UIImageView!
     @IBOutlet weak var knowTitle: UILabel!
     @IBOutlet weak var knowDescription: UITextView!
+    @IBOutlet weak var button: bouncyButton!
     
 }

@@ -8,18 +8,31 @@
 
 import UIKit
 import CoreLocation
+import SwifteriOS
+import Accounts
 import RealmSwift
 
 let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
+let account = ACAccountStore()
+let accountType = account.accountTypeWithAccountTypeIdentifier(
+    ACAccountTypeIdentifierTwitter)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let realm = try! Realm()
     var window: UIWindow?
+    var swifter: Swifter?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let days = realm.objects(DayResume)
+        
+        let arrayOfAccounts = account.accountsWithAccountType(accountType)
+        
+        if arrayOfAccounts.count > 0 {
+            let twitterAccount = arrayOfAccounts.last as! ACAccount
+            swifter = Swifter(account: twitterAccount)
+        }
 
         if days.count > 0 {
             if isSameDays((days.last!.date)!, NSDate()){

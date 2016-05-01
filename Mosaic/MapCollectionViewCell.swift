@@ -43,6 +43,7 @@ class MapCollectionViewCell: UICollectionViewCell, MKMapViewDelegate {
 
         let anView = MKAnnotationView(annotation: annotation, reuseIdentifier: String(annotation.coordinate))
     
+        
         if let annotation = annotation as? CustomPointAnnotation {
             //anView.image = annotation.image
             anView.backgroundColor = UIColor.clearColor()

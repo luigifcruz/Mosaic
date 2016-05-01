@@ -20,6 +20,8 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate, CLLocat
     let locManager = CLLocationManager()
     var today: Results<DayResume>!
     
+    var segueSender: CGPoint?
+    
     var weatherSummary: String! = ""
     var weatherFahrenheit: String! = ""
     
@@ -40,31 +42,32 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate, CLLocat
 
     
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        if (status == .AuthorizedWhenInUse) {
+        if status == .AuthorizedWhenInUse && locManager.location != nil {
             
             let geoCoder = CLGeocoder()
             geoCoder.reverseGeocodeLocation(locManager.location!, completionHandler: { (placemarks, error) -> Void in
-                
                 var placeMark: CLPlacemark!
                 placeMark = placemarks?[0]
                 
-                if let city = placeMark.addressDictionary!["City"] as? NSString {
-                    if let country = placeMark.addressDictionary!["Country"] as? NSString {
-                        self.locationString = "\(city), \(country)"
+                if placeMark != nil {
+                    if let city = placeMark.addressDictionary!["City"] as? NSString {
+                        if let country = placeMark.addressDictionary!["Country"] as? NSString {
+                            self.locationString = "\(city), \(country)"
+                        }
                     }
                 }
             })
             
             let URL = "https://api.forecast.io/forecast/a5833b25fcb056bd99c62d5dca8712fd/\(String(locManager.location!.coordinate.latitude)),\(String(locManager.location!.coordinate.longitude))"
 
-            parseJSON(getJSON(URL)) {
+            /*parseJSON(getJSON(URL)) {
                 (result) in
                 let fahrenheit = result["currently"]!["temperature"] as! Double
                 self.weatherFahrenheit = String(Int(fahrenheit))
                 
                 self.weatherSummary = result["currently"]!["icon"] as! String
                 NSNotificationCenter.defaultCenter().postNotificationName("ReloadBubbles", object: false)
-            }
+            }*/
         }
     }
     
@@ -294,7 +297,7 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate, CLLocat
             }
         }
     }
-    
+
     @IBAction func shareSection(sender: AnyObject) {
         let informationModal = ShareViewController(nibName: "ShareViewController", bundle: nil)
         
@@ -329,7 +332,10 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate, CLLocat
     var infoIsRogueIndexPath: NSIndexPath?
     
     func didPress(recognizer: UIGestureRecognizer){
-        let location = recognizer.locationInView(collectionView)
+        segueSender = recognizer.locationInView(collectionView)
+        performSegueWithIdentifier("ExplodeBubble", sender: self)
+        
+        /*let location = recognizer.locationInView(collectionView)
         
         if recognizer.state == .Began || recognizer.state == .Changed {
             if !infoIsRogue {
@@ -391,6 +397,6 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate, CLLocat
                     self.informationView.view.removeFromSuperview()
                     self.infoIsRogue = false
             })
-        }
+        }*/
     }
 }
