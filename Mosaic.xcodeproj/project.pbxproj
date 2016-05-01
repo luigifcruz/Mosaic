@@ -22,8 +22,6 @@
 		1F6FD6561CCEF5C000563C91 /* database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6FD6551CCEF5C000563C91 /* database.swift */; };
 		1F6FD6581CCEFC1400563C91 /* Master.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6FD6571CCEFC1400563C91 /* Master.swift */; };
 		1F94C5381CD4FAC200C74287 /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F94C5371CD4FAC200C74287 /* location.png */; };
-		1FA3A0F31CD548F2005BB18E /* SwifteriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA3A0F21CD548F2005BB18E /* SwifteriOS.framework */; };
-		1FA3A0F51CD54939005BB18E /* SwifteriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA3A0F41CD54939005BB18E /* SwifteriOS.framework */; };
 		1FA3A0F61CD54939005BB18E /* SwifteriOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA3A0F41CD54939005BB18E /* SwifteriOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1FA3A0F91CD54BAF005BB18E /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA3A0F81CD54BAF005BB18E /* HealthKit.framework */; };
 		1FA3A0FB1CD58243005BB18E /* information.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1FA3A0FA1CD58243005BB18E /* information.jpg */; };
@@ -36,6 +34,7 @@
 		1FB2C7BA1CD46E2C002BC1F9 /* DidYouKnowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB2C7B91CD46E2C002BC1F9 /* DidYouKnowTableViewCell.swift */; };
 		1FB2C7BC1CD470E4002BC1F9 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB2C7BB1CD470E4002BC1F9 /* HeaderTableViewCell.swift */; };
 		1FD3D45F1CD17DA30081AA92 /* 23.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FD3D45E1CD17DA30081AA92 /* 23.png */; };
+		1FDBA1BB1CD65B2900AEE699 /* Close.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDBA1BA1CD65B2900AEE699 /* Close.swift */; };
 		1FE6C9FA1CC94679009A9AAA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE6C9F91CC94679009A9AAA /* MainViewController.swift */; };
 		1FE6CA0C1CC97C68009A9AAA /* ExtensionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE6CA0B1CC97C68009A9AAA /* ExtensionCollectionViewCell.swift */; };
 		1FE6CA0E1CC97CA0009A9AAA /* HeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE6CA0D1CC97CA0009A9AAA /* HeaderCollectionViewCell.swift */; };
@@ -105,7 +104,6 @@
 		1F6FD6551CCEF5C000563C91 /* database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = database.swift; sourceTree = "<group>"; };
 		1F6FD6571CCEFC1400563C91 /* Master.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Master.swift; sourceTree = "<group>"; };
 		1F94C5371CD4FAC200C74287 /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = location.png; path = ../../location.png; sourceTree = "<group>"; };
-		1FA3A0ED1CD54794005BB18E /* SwifteriOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwifteriOS.framework; path = "../../../Library/Developer/Xcode/DerivedData/Swifter-dcckoqszbwcnsdcmqytqofatdtti/Build/Products/Debug-iphoneos/SwifteriOS.framework"; sourceTree = "<group>"; };
 		1FA3A0F21CD548F2005BB18E /* SwifteriOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwifteriOS.framework; path = "../Swifter/build/Debug-iphoneos/SwifteriOS.framework"; sourceTree = "<group>"; };
 		1FA3A0F41CD54939005BB18E /* SwifteriOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = SwifteriOS.framework; path = "/Users/luigifcruz/Library/Developer/Xcode/DerivedData/Mosaic-avucthnkgviolrfvidoebdwqfepc/Build/Products/Debug-iphoneos/SwifteriOS.framework"; sourceTree = "<absolute>"; };
 		1FA3A0F81CD54BAF005BB18E /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
@@ -120,6 +118,7 @@
 		1FB2C7BB1CD470E4002BC1F9 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		1FB75C631CD5363C000F176C /* Luigi Freitas Cruz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Luigi Freitas Cruz.entitlements"; sourceTree = "<group>"; };
 		1FD3D45E1CD17DA30081AA92 /* 23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 23.png; path = ../../../Documents/Screenshot/23.png; sourceTree = "<group>"; };
+		1FDBA1BA1CD65B2900AEE699 /* Close.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Close.swift; sourceTree = "<group>"; };
 		1FE6C9F91CC94679009A9AAA /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		1FE6C9FF1CC96DA7009A9AAA /* Mosaic.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Mosaic.entitlements; sourceTree = "<group>"; };
 		1FE6CA0B1CC97C68009A9AAA /* ExtensionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -156,12 +155,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FA3A0F31CD548F2005BB18E /* SwifteriOS.framework in Frameworks */,
 				1FE6CA181CC9AA15009A9AAA /* Social.framework in Frameworks */,
 				1FE6CA121CC99705009A9AAA /* Charts.framework in Frameworks */,
 				1FA3A0F91CD54BAF005BB18E /* HealthKit.framework in Frameworks */,
 				31449006EED01CFD97A84855 /* Pods.framework in Frameworks */,
-				1FA3A0F51CD54939005BB18E /* SwifteriOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +315,6 @@
 				1FEB48D91CC6EF970084DA91 /* Custom */,
 				1FE91D6D1CC6C3B70081D650 /* Assets.xcassets */,
 				1FA3A0F41CD54939005BB18E /* SwifteriOS.framework */,
-				1FA3A0ED1CD54794005BB18E /* SwifteriOS.framework */,
 				1FE6C9FF1CC96DA7009A9AAA /* Mosaic.entitlements */,
 				1FB75C631CD5363C000F176C /* Luigi Freitas Cruz.entitlements */,
 				1FE91D721CC6C3B70081D650 /* Info.plist */,
@@ -363,6 +359,7 @@
 			children = (
 				1FEB48D41CC6D8860084DA91 /* button.swift */,
 				1F57DD421CD5C16700F53A61 /* ExplodeSegue.swift */,
+				1FDBA1BA1CD65B2900AEE699 /* Close.swift */,
 				1FEDDE161CD2E28B0068F806 /* RenderImageColor.swift */,
 			);
 			name = Custom;
@@ -617,6 +614,7 @@
 				1F6FD6531CCEE20C00563C91 /* BlurViewController.swift in Sources */,
 				1F6FD6561CCEF5C000563C91 /* database.swift in Sources */,
 				1F3B7F5F1CD0686700571B82 /* MainCollectionViewCell.swift in Sources */,
+				1FDBA1BB1CD65B2900AEE699 /* Close.swift in Sources */,
 				1FB2C7BA1CD46E2C002BC1F9 /* DidYouKnowTableViewCell.swift in Sources */,
 				1F57DD491CD5DA2600F53A61 /* DetailHeaderCollectionViewCell.swift in Sources */,
 				1FE6CA0E1CC97CA0009A9AAA /* HeaderCollectionViewCell.swift in Sources */,

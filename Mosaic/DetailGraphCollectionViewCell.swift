@@ -7,7 +7,10 @@
 //
 
 import UIKit
+import Charts
 
 class DetailGraphCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var chartBackground: UIView!
+    @IBOutlet weak var graph: LineChartView!
 }

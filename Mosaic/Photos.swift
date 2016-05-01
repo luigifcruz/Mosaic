@@ -48,6 +48,26 @@ class Photos {
         }
     }
     
+    class func getSloMoCount(day: NSDate, completion: (result: Int) -> Void) {
+        get(day, type: .Video) {
+            (result) in
+            
+            var mediaCount = 0
+            
+            for i in 0...result.count - 1 {
+                let media = result.objectAtIndex(i) as! PHAsset
+                
+                if isSameDays(media.creationDate!, day) {
+                    if media.mediaSubtypes.rawValue == 131072 {
+                        mediaCount += 1
+                    }
+                }
+            }
+            
+            completion(result: mediaCount)
+        }
+    }
+    
     class func getLivePhotosCount(day: NSDate, completion: (result: Int) -> Void) {
         get(day, type: .Image) {
             (result) in

@@ -60,14 +60,20 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate, CLLocat
             
             let URL = "https://api.forecast.io/forecast/a5833b25fcb056bd99c62d5dca8712fd/\(String(locManager.location!.coordinate.latitude)),\(String(locManager.location!.coordinate.longitude))"
 
-            /*parseJSON(getJSON(URL)) {
-                (result) in
-                let fahrenheit = result["currently"]!["temperature"] as! Double
-                self.weatherFahrenheit = String(Int(fahrenheit))
-                
-                self.weatherSummary = result["currently"]!["icon"] as! String
-                NSNotificationCenter.defaultCenter().postNotificationName("ReloadBubbles", object: false)
-            }*/
+            parseJSON(getJSON(URL)) { (result) in
+                if let dictionary = result.valueForKey("currently") {
+                    let data = dictionary as! NSDictionary
+                    
+                    if let temperature = data.valueForKey("temperature") {
+                        self.weatherFahrenheit = String(Int(temperature as! Double))
+                    }
+                    
+                    if let summary = data.valueForKey("icon") {
+                        self.weatherSummary = summary as! String
+                        NSNotificationCenter.defaultCenter().postNotificationName("ReloadBubbles", object: false)
+                    }
+                }
+            }
         }
     }
     
@@ -152,7 +158,7 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate, CLLocat
                 break;
             case "rain":
                 cell.WeatherLabel.text = "RAINY"
-                cell.MainLabel.text = "Cut the crap!"
+                cell.MainLabel.text = "Awesomeness!"
                 cell.SubLabel.text = "Great day to make internet things."
                 break;
             case "snow":
@@ -162,12 +168,12 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate, CLLocat
                 break;
             case "wind":
                 cell.WeatherLabel.text = "WINDY"
-                cell.MainLabel.text = ""
+                cell.MainLabel.text = "Cut the crap!"
                 cell.SubLabel.text = "Go fly a kite! It's awesome. I think. #NotHuman"
                 break;
             case "fog":
                 cell.WeatherLabel.text = "FOGGY"
-                cell.MainLabel.text = ""
+                cell.MainLabel.text = "Procrastinating is Meh!"
                 cell.SubLabel.text = "It's not a great ideia to drive today."
                 break;
             case "cloudy":
@@ -324,6 +330,7 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate, CLLocat
         presentViewController(vc, animated: true, completion: nil)
     }
     
+
     let informationModal = GeneralModalViewController(nibName: "GeneralModalViewController", bundle: nil)
     let informationView = BlurViewController(nibName: "BlurViewController", bundle: nil)
     var bubbleSuperview: UIView?
@@ -332,10 +339,10 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate, CLLocat
     var infoIsRogueIndexPath: NSIndexPath?
     
     func didPress(recognizer: UIGestureRecognizer){
-        segueSender = recognizer.locationInView(collectionView)
-        performSegueWithIdentifier("ExplodeBubble", sender: self)
+        /*segueSender = recognizer.locationInView(collectionView)
+        performSegueWithIdentifier("ExplodeBubble", sender: self)*/
         
-        /*let location = recognizer.locationInView(collectionView)
+        let location = recognizer.locationInView(collectionView)
         
         if recognizer.state == .Began || recognizer.state == .Changed {
             if !infoIsRogue {
@@ -397,6 +404,10 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate, CLLocat
                     self.informationView.view.removeFromSuperview()
                     self.infoIsRogue = false
             })
-        }*/
+        }
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .Default
     }
 }

@@ -45,7 +45,7 @@ class MapCollectionViewCell: UICollectionViewCell, MKMapViewDelegate {
     
         
         if let annotation = annotation as? CustomPointAnnotation {
-            //anView.image = annotation.image
+            anView.image = annotation.image
             anView.backgroundColor = UIColor.clearColor()
             anView.frame.size = CGSize(width: 45, height: 45)
             anView.canShowCallout = false
@@ -54,8 +54,7 @@ class MapCollectionViewCell: UICollectionViewCell, MKMapViewDelegate {
             anView.layer.cornerRadius = anView.frame.height / 2
             anView.clipsToBounds = true
         }
-        
-        
+
         return anView
     }
 }

@@ -10,5 +10,6 @@ import UIKit
 
 class DetailHeaderCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var headerSeparator: UIView!
     @IBOutlet weak var title: UILabel!
 }

@@ -202,7 +202,7 @@ class TrackerMaster {
                 PhotosVideosBubble.label = "VIDEOS"
                 PhotosVideosBubble.number = 0
                 
-                PhotosVideosBubble.pointWeight = 5
+                PhotosVideosBubble.pointWeight = 4
                 
                 PhotosVideosBubble.infoTitle = "Video Count"
                 PhotosVideosBubble.infoDescription = "Counts how many videos you took today."
@@ -211,17 +211,19 @@ class TrackerMaster {
                 PhotosVideosBubble.height = CGFloat(95)
                 PhotosVideosBubble.width = CGFloat(95)
                 
-                let PhotosColorBubble = Bubble()
+                let PhotosSloMoBubble = Bubble()
                 
-                PhotosColorBubble.label = "COLOR"
-                PhotosColorBubble.number = 0
+                PhotosSloMoBubble.label = "SLOMO"
+                PhotosSloMoBubble.number = 0
                 
-                PhotosColorBubble.infoTitle = "Video Count"
-                PhotosColorBubble.infoDescription = "Counts how many tweets you sent today."
+                PhotosSloMoBubble.pointWeight = 7
                 
-                PhotosColorBubble.type = "extension"
-                PhotosColorBubble.height = CGFloat(95)
-                PhotosColorBubble.width = CGFloat(95)
+                PhotosSloMoBubble.infoTitle = "Slow Motion Videos"
+                PhotosSloMoBubble.infoDescription = "Counts how many SloMo Videos you took today."
+                
+                PhotosSloMoBubble.type = "extension"
+                PhotosSloMoBubble.height = CGFloat(95)
+                PhotosSloMoBubble.width = CGFloat(95)
                 
                 let PhotosPadding1Bubble = Bubble()
                 
@@ -231,7 +233,7 @@ class TrackerMaster {
                 PhotosPadding1Bubble.height = CGFloat(15)
                 PhotosPadding1Bubble.width = CGFloat(400)
                 
-                PhotosCard.bubbles.appendContentsOf([PhotosMapBubble, PhotosTotalBubble, PhotosLiveBubble, PhotosVideosBubble, PhotosColorBubble, PhotosPadding1Bubble])
+                PhotosCard.bubbles.appendContentsOf([PhotosMapBubble, PhotosTotalBubble, PhotosLiveBubble, PhotosVideosBubble, PhotosSloMoBubble, PhotosPadding1Bubble])
                 
                 general.cardStatus.appendContentsOf([PhotosCard, HealthCard, TwitterCard])
             })
@@ -309,6 +311,10 @@ class TrackerMaster {
                             Photos.getLivePhotosCount(NSDate()) {
                                 (result) in
                                 saveOnCard(card, result: result, term: "LIVE")
+                            }
+                            Photos.getSloMoCount(NSDate()) {
+                                (result) in
+                                saveOnCard(card, result: result, term: "SLOMO")
                             }
                             Photos.getMediaCount(NSDate(), media: .Image) {
                                 (result) in
@@ -409,11 +415,13 @@ func cardPoint(cards: List<Card>, name: String) -> String {
 }
 
 func getJSON(urlToRequest: String) -> NSData {
-    let data = NSURL(string: urlToRequest)
-    if data != nil {
-       return NSData(contentsOfURL: data!)!
+    if let url = NSURL(string: urlToRequest) {
+        if let data = NSData(contentsOfURL: url) {
+            return data
+        }
     }
-    return NSData(contentsOfURL: data!)!
+
+    return NSData()
 }
 
 func parseJSON(inputData: NSData, completion: (result: NSDictionary) -> Void) {
@@ -448,6 +456,28 @@ extension UIColor {
             self.init(red: CGFloat(r) / CGFloat(255.0), green: CGFloat(g) / CGFloat(255.0), blue: CGFloat(b) / CGFloat(255.0), alpha: CGFloat(1))
         }
     }
+}
+
+func lighterColorForColor(color: UIColor) -> UIColor {
+    
+    var r:CGFloat = 0, g:CGFloat = 0, b:CGFloat = 0, a:CGFloat = 0
+    
+    if color.getRed(&r, green: &g, blue: &b, alpha: &a){
+        return UIColor(red: min(r + 0.2, 1.0), green: min(g + 0.2, 1.0), blue: min(b + 0.2, 1.0), alpha: a)
+    }
+    
+    return UIColor()
+}
+
+func darkerColorForColor(color: UIColor) -> UIColor {
+    
+    var r:CGFloat = 0, g:CGFloat = 0, b:CGFloat = 0, a:CGFloat = 0
+    
+    if color.getRed(&r, green: &g, blue: &b, alpha: &a){
+        return UIColor(red: max(r - 0.2, 0.0), green: max(g - 0.2, 0.0), blue: max(b - 0.2, 0.0), alpha: a)
+    }
+    
+    return UIColor()
 }
 
 public func delay(delay:Double, closure:()->()) {
