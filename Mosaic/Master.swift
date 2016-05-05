@@ -235,7 +235,7 @@ class TrackerMaster {
                 
                 PhotosCard.bubbles.appendContentsOf([PhotosMapBubble, PhotosTotalBubble, PhotosLiveBubble, PhotosVideosBubble, PhotosSloMoBubble, PhotosPadding1Bubble])
                 
-                general.cardStatus.appendContentsOf([PhotosCard, HealthCard, TwitterCard])
+                general.cardStatus.appendContentsOf([PhotosCard, HealthCard])
             })
             completion()
         } catch {
@@ -275,7 +275,7 @@ class TrackerMaster {
                     switch card.name {
                     case "Twitter":
                         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), {
-                            Twitter.getUserID() {
+                            /*Twitter.getUserID() {
                                 (result) in
                                 Twitter.getTweets(result, completion: { (result) in
                                     saveOnCard(card, result: result, term: "TWEETS")
@@ -286,8 +286,7 @@ class TrackerMaster {
                                 Twitter.getRetweets(result, completion: { (result) in
                                     saveOnCard(card, result: result, term: "RETWEETS")
                                 })
-                            }
-                            
+                            }*/
                         })
                         break;
                     case "Health":

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import SwifteriOS
+
 
 struct tweetScheme {
     var text = ""
@@ -22,7 +22,7 @@ class Twitter {
             TrackerMaster.updateCardStatus("Twitter", date: NSDate(), status: success)
         })
     }
-    
+    /*
     class func getUserID(completion: (result: String) -> Void) {
         delegate.swifter!.getAccountVerifyCredentials(success: { user in
             if let userID = user!["id_str"]!.string {
@@ -89,5 +89,5 @@ class Twitter {
                 completion(result: result)
             })
         }, failure: nil)
-    }
+    }*/
 }

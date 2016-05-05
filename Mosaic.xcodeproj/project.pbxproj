@@ -22,7 +22,6 @@
 		1F6FD6561CCEF5C000563C91 /* database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6FD6551CCEF5C000563C91 /* database.swift */; };
 		1F6FD6581CCEFC1400563C91 /* Master.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6FD6571CCEFC1400563C91 /* Master.swift */; };
 		1F94C5381CD4FAC200C74287 /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F94C5371CD4FAC200C74287 /* location.png */; };
-		1FA3A0F61CD54939005BB18E /* SwifteriOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA3A0F41CD54939005BB18E /* SwifteriOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1FA3A0F91CD54BAF005BB18E /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA3A0F81CD54BAF005BB18E /* HealthKit.framework */; };
 		1FA3A0FB1CD58243005BB18E /* information.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1FA3A0FA1CD58243005BB18E /* information.jpg */; };
 		1FAA2BF51CD2C3DF004CD5D3 /* GeneralModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAA2BF31CD2C3DF004CD5D3 /* GeneralModalViewController.swift */; };
@@ -74,22 +73,9 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		1FA3A0F71CD54939005BB18E /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				1FA3A0F61CD54939005BB18E /* SwifteriOS.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		1F0BBFFF1CCA9AC4004CDBB5 /* mosiac startup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mosiac startup.png"; path = "../../mosiac startup.png"; sourceTree = "<group>"; };
+		1F21AF581CD6B6C100F6A58D /* SwifteriOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = SwifteriOS.framework; path = "/Users/luigifcruz/Library/Developer/Xcode/DerivedData/Mosaic-avucthnkgviolrfvidoebdwqfepc/Build/Products/Debug-iphoneos/SwifteriOS.framework"; sourceTree = "<absolute>"; };
 		1F3B7F5A1CD05BB900571B82 /* MapCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapCollectionViewCell.swift; sourceTree = "<group>"; };
 		1F3B7F5C1CD05EE000571B82 /* TweetCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCollectionViewCell.swift; sourceTree = "<group>"; };
 		1F3B7F5E1CD0686700571B82 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -104,8 +90,6 @@
 		1F6FD6551CCEF5C000563C91 /* database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = database.swift; sourceTree = "<group>"; };
 		1F6FD6571CCEFC1400563C91 /* Master.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Master.swift; sourceTree = "<group>"; };
 		1F94C5371CD4FAC200C74287 /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = location.png; path = ../../location.png; sourceTree = "<group>"; };
-		1FA3A0F21CD548F2005BB18E /* SwifteriOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwifteriOS.framework; path = "../Swifter/build/Debug-iphoneos/SwifteriOS.framework"; sourceTree = "<group>"; };
-		1FA3A0F41CD54939005BB18E /* SwifteriOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = SwifteriOS.framework; path = "/Users/luigifcruz/Library/Developer/Xcode/DerivedData/Mosaic-avucthnkgviolrfvidoebdwqfepc/Build/Products/Debug-iphoneos/SwifteriOS.framework"; sourceTree = "<absolute>"; };
 		1FA3A0F81CD54BAF005BB18E /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		1FA3A0FA1CD58243005BB18E /* information.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = information.jpg; path = ../../information.jpg; sourceTree = "<group>"; };
 		1FAA2BF31CD2C3DF004CD5D3 /* GeneralModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralModalViewController.swift; sourceTree = "<group>"; };
@@ -283,6 +267,7 @@
 		1FE91D5A1CC6C3B70081D650 = {
 			isa = PBXGroup;
 			children = (
+				1F21AF581CD6B6C100F6A58D /* SwifteriOS.framework */,
 				1FE91D651CC6C3B70081D650 /* Mosaic */,
 				1FE91D7A1CC6C3B80081D650 /* MosaicTests */,
 				1FE91D851CC6C3B80081D650 /* MosaicUITests */,
@@ -314,7 +299,6 @@
 				1FE6CA001CC96ED2009A9AAA /* Trackers */,
 				1FEB48D91CC6EF970084DA91 /* Custom */,
 				1FE91D6D1CC6C3B70081D650 /* Assets.xcassets */,
-				1FA3A0F41CD54939005BB18E /* SwifteriOS.framework */,
 				1FE6C9FF1CC96DA7009A9AAA /* Mosaic.entitlements */,
 				1FB75C631CD5363C000F176C /* Luigi Freitas Cruz.entitlements */,
 				1FE91D721CC6C3B70081D650 /* Info.plist */,
@@ -396,7 +380,6 @@
 			isa = PBXGroup;
 			children = (
 				1FA3A0F81CD54BAF005BB18E /* HealthKit.framework */,
-				1FA3A0F21CD548F2005BB18E /* SwifteriOS.framework */,
 				1FE6CA171CC9AA15009A9AAA /* Social.framework */,
 				1FE6CA111CC99705009A9AAA /* Charts.framework */,
 				EC9A25FD871CF61358678E63 /* Pods.framework */,
@@ -417,7 +400,6 @@
 				1FE91D611CC6C3B70081D650 /* Resources */,
 				DBE10D7749C576F4ABF470ED /* Embed Pods Frameworks */,
 				7760869DC113D595B372F199 /* Copy Pods Resources */,
-				1FA3A0F71CD54939005BB18E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

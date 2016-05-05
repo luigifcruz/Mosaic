@@ -655,7 +655,7 @@
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X01-jd-ozu" customClass="bouncyButton" customModule="Luigi_Freitas_Cruz" customModuleProvider="target">
                                                             <rect key="frame" x="104" y="93" width="191" height="39"/>
                                                             <color key="backgroundColor" red="0.073799808930000002" green="0.81191821809999998" blue="0.58407447099999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <state key="normal" title="This isn't a easter egg.">
+                                                            <state key="normal" title="Press It!">
                                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
                                                             <connections>

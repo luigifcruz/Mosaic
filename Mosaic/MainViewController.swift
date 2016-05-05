@@ -313,7 +313,7 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate, CLLocat
         data.weatherNumber = weatherFahrenheit
         data.weatherCondition = weatherCondition
         data.location = locationString
-        data.tPoints = cardPoint(today.last!.cardsOfTheDay, name: "Twitter")
+        data.tPoints = "0"
         data.hPoints = cardPoint(today.last!.cardsOfTheDay, name: "Health")
         data.pPoints = cardPoint(today.last!.cardsOfTheDay, name: "Photos")
         
